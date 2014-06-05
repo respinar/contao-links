@@ -1,0 +1,33 @@
+{
+    "name": "respinar/links",
+    "description":"Links module for Contao",
+    "keywords":["contao", "link"],
+    "type": "contao-module",
+    "homepage":"https://github.com/respinar/links",
+    "license":"LGPL-3.0+",
+    "authors":[
+        {
+            "name":"Hamid Abbaszadeh",
+            "email":"info@respinar.com",
+            "homepage":"http://respinar.com/",
+            "role":"Developer"
+        }
+    ],
+    "support":{
+        "issues":"https://github.com/respinar/links/issues"
+    },
+    "require": {
+        "contao/core": ">=3.2,<4-dev",
+        "contao-community-alliance/composer-installer": "*"
+    },
+    "autoload": {
+        "classmap": [""]
+    },
+    "extra": {
+        "contao": {
+            "sources": {
+                "": "system/modules/links"
+            }            
+        }
+    }
+}
