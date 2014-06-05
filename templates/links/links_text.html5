@@ -1,0 +1,4 @@
+
+<li class="link<?php echo $this->class; ?>">
+  <a href="<?php echo $this->url; ?>" title="<?php echo $this->linkTitle; ?>" target="<?php echo $this->target; ?>" <?php if($this->rel): ?>rel="<?php echo $this->rel; ?>"<?php endif; ?>><?php echo $this->title; ?></a>
+</li>
