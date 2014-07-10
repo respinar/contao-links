@@ -3,7 +3,7 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['links']   = '{title_legend},name,headline,type;{category_legend},links_category;{protected_legend:hide},protected;{template_legend:hide},links_template,imgSize;;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['links']   = '{title_legend},name,headline,type;{category_legend},links_category;{protected_legend:hide},protected;{template_legend:hide},links_template,imgSize;{expert_legend:hide},guests,cssID,space';
 
 
 /**
