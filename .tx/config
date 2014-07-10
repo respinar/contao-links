@@ -1,0 +1,23 @@
+[links.tl_linksphp]
+file_filter = translations/links.tl_linksphp/<lang>.ini
+source_lang = en
+type = PHP_INI
+
+[links.modulesphp]
+file_filter = translations/links.modulesphp/<lang>.ini
+source_lang = en
+type = PHP_INI
+
+[main]
+host = https://www.transifex.com
+
+[links.tl_links_categoryphp]
+file_filter = translations/links.tl_links_categoryphp/<lang>.ini
+source_lang = en
+type = PHP_INI
+
+[links.defaultphp]
+file_filter = translations/links.defaultphp/<lang>.ini
+source_lang = en
+type = PHP_INI
+
