@@ -30,7 +30,7 @@
             },
             "transifex": {
                 "project": "links",
-                "prefix": "",
+                "prefix": "master-",
                 "languages_cto": "languages",
                 "languages_tx": ".tx"
             }            
