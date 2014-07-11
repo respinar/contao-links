@@ -27,6 +27,12 @@
         "contao": {
             "sources": {
                 "": "system/modules/links"
+            },
+            "transifex": {
+                "project": "links",
+                "prefix": "",
+                "languages_cto": "languages",
+                "languages_tx": ".tx"
             }            
         }
     }

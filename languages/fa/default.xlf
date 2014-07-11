@@ -1,0 +1,11 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-01-18T17:52:14+03:30" original="default" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="MSC.emptyLinks">
+        <source>There is no links</source>
+        <target>پیوندی وجود ندارد</target>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>

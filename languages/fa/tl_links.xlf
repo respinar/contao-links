@@ -1,0 +1,150 @@
+<?xml version="1.0" ?><xliff version="1.2" xmlns="urn:oasis:names:tc:xliff:document:1.2">
+  <file datatype="php" date="2014-02-04T12:39:37+03:30" original="tl_links" source-language="en" target-language="en">
+    <body>
+      <trans-unit id="tl_links.title.0">
+        <source>Title</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.title.1">
+        <source>Please enter the link title.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.url.0">
+        <source>URL</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.url.1">
+        <source>Please enter the link url.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.addImage.0">
+        <source>Add an image</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.addImage.1">
+        <source>Add an image to the link item.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.singleSRC.0">
+        <source>Source file</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.singleSRC.1">
+        <source>Please select a file or folder from the files directory.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.target.0">
+        <source>Target</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.target.1">
+        <source>Open the link in a new browser window.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.rel.0">
+        <source>rel Attribute</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.rel.1">
+        <source>The rel Attribute is added as rel attribute in the HTML markup.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.linkTitle.0">
+        <source>Link title</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.linkTitle.1">
+        <source>The link title is added as title attribute in the HTML markup.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.published.0">
+        <source>Publish link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.published.1">
+        <source>Make the link publicly visible on the website.</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.title_legend">
+        <source>Title</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.href_legend">
+        <source>Hyperlink settings</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.image_legend">
+        <source>Image settings</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.publish_legend">
+        <source>Publish Settings</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.new.0">
+        <source>New link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.new.1">
+        <source>Add a new link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.show.0">
+        <source>Link details</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.show.1">
+        <source>Show the details of link ID %s</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.edit.0">
+        <source>Edit link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.edit.1">
+        <source>Edit link ID %s</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.copy.0">
+        <source>Copy link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.copy.1">
+        <source>Copy link ID %s</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.cut.0">
+        <source>Move link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.cut.1">
+        <source>Move link ID %s</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.delete.0">
+        <source>Delete link</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.delete.1">
+        <source>Delete link ID %s</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.pasteafter.0">
+        <source>Paste into this category</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.pasteafter.1">
+        <source>Paste after link ID %s</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.pastenew.0">
+        <source>Add new at the top</source>
+        
+      </trans-unit>
+      <trans-unit id="tl_links.pastenew.1">
+        <source>Add new after link ID %s</source>
+        
+      </trans-unit>
+    </body>
+  </file>
+</xliff>
