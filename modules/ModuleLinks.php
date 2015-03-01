@@ -1,6 +1,6 @@
 <?php
 
-namespace Contao;
+namespace links;
 
 /**
  * Class ModuleLinks
@@ -35,7 +35,7 @@ abstract class ModuleLinks extends \Module
 		$objTemplate->url       = $objLink->url;
 		$objTemplate->target    = $objLink->target;
 		$objTemplate->linkTitle = $objLink->linkTitle ? $objLink->linkTitle : $objLink->title;
-		$objTemplate->rel		= $objLink->rel;
+		$objTemplate->rel       = $objLink->rel;
 		$objTemplate->image     = $strImage;
 
 		return $objTemplate->parse();

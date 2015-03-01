@@ -1,6 +1,20 @@
 <?php
 
-namespace Contao;
+/**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2013 Leo Feyer
+ *
+ * @package   links
+ * @author    Hamid Abbaszadeh
+ * @license   GNU/LGPL
+ * @copyright 2014
+ */
+
+/**
+ * Namespace
+ */
+namespace links;
 
 /**
  * Class ModuleLinksList
@@ -34,7 +48,13 @@ class ModuleLinksList extends \ModuleLinks
 			$objTemplate->link = $this->name;
 			$objTemplate->href = 'contao/main.php?do=themes&amp;table=tl_module&amp;act=edit&amp;id=' . $this->id;
 
+			$this->links_categories = $this->sortOutProtected(deserialize($this->links_categories));
 
+			// No catalog categries available
+			if (!is_array($this->links_categories) || empty($this->links_categories))
+			{
+				return '';
+			}
 
 			return $objTemplate->parse();
 		}
@@ -49,18 +69,20 @@ class ModuleLinksList extends \ModuleLinks
 	protected function compile()
 	{
 
-		$intList = $this->links_category;
+		$this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptyLinks'];
 
-		//$objLinks = $this->Database->prepare("SELECT * FROM tl_links WHERE published=1 AND pid=? ORDER BY sorting")->execute($intList);
+		$intTotal = \LinksModel::countPublishedByPids($this->links_categories);
 
-		$objLinks = \LinksModel::findPublishedByPid($this->links_category);
+		if ($intTotal < 1)
+		{
+			return;
+		}
+
+		$objLinks = \LinksModel::findPublishedByPids($this->links_categories);
 
 		// No items found
-		if ($objLinks === null)
+		if ($objLinks !== null)
 		{
-			$this->Template = new \FrontendTemplate('mod_links_empty');
-			$this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptyLinks'];
-		} else {
 			$this->Template->links = $this->parseLinks($objLinks);
 		}
 

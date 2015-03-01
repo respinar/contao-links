@@ -3,20 +3,20 @@
 /**
  * Add palettes to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['palettes']['links']   = '{title_legend},name,headline,type;{category_legend},links_category;{protected_legend:hide},protected;{template_legend:hide},links_template,imgSize;{expert_legend:hide},guests,cssID,space';
+$GLOBALS['TL_DCA']['tl_module']['palettes']['links']   = '{title_legend},name,headline,type;{category_legend},links_categories;{template_legend:hide},links_template,customTpl;{image_legend:hide},imgSize;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';
 
 
 /**
  * Add fields to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['fields']['links_category'] = array
+$GLOBALS['TL_DCA']['tl_module']['fields']['links_categories'] = array
 (
-	'label'                => &$GLOBALS['TL_LANG']['tl_module']['links_category'],
+	'label'                => &$GLOBALS['TL_LANG']['tl_module']['links_categories'],
 	'exclude'              => true,
-	'inputType'            => 'radio',
-	'foreignKey'           => 'tl_links_category.title',
+	'inputType'            => 'checkbox',
+	'options_callback'     => array('tl_module_links', 'getCategories'),
 	'eval'                 => array('multiple'=>true, 'mandatory'=>true),
-	'sql'				   => "int(10) unsigned NOT NULL default '0'",
+	'sql'				   => "blob NULL",
 );
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = array
@@ -24,7 +24,7 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = array
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['links_template'],
 	'exclude'              => true,
 	'inputType'            => 'select',
-	'options_callback'     => array('tl_links_template', 'getLinksTemplates'),
+	'options_callback'     => array('tl_module_links', 'getLinksTemplates'),
 	'eval'				   => array('tl_class'=>'w50'),
 	'sql'				   => "varchar(64) NOT NULL default ''",
 );
@@ -38,8 +38,34 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = array
  * @author     Hamid Abbaszadeh <http://respinar.com>
  * @package    Links
  */
-class tl_links_template extends Backend
+class tl_module_links extends Backend
 {
+
+	/**
+	 * Get all links archives and return them as array
+	 * @return array
+	 */
+	public function getCategories()
+	{
+		//if (!$this->User->isAdmin && !is_array($this->User->news))
+		//{
+		//	return array();
+		//}
+
+		$arrCategories = array();
+		$objCategories = $this->Database->execute("SELECT id, title FROM tl_links_category ORDER BY title");
+
+		while ($objCategories->next())
+		{
+			//if ($this->User->hasAccess($objArchives->id, 'news'))
+			//{
+				$arrCategories[$objCategories->id] = $objCategories->title;
+			//}
+		}
+
+		return $arrCategories;
+	}
+
 
 	/**
 	 * Return all links templates as array

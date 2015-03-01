@@ -1,6 +1,17 @@
 <?php
 
 /**
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2014 Leo Feyer
+ *
+ * @package   kinks
+ * @author    Hamid Abbaszadeh
+ * @license   GNU/LGPL
+ * @copyright 2014
+ */
+
+/**
  * Table tl_links
  */
 $GLOBALS['TL_DCA']['tl_links'] = array
@@ -89,7 +100,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'__selector__'                => array('addImage'),
+		'__selector__'                => array('addImage','published'),
 		'default'                     => '{title_legend},title,url;{href_legend},linkTitle,rel,target;{image_legend},addImage;{publish_legend},published'
 	),
 
@@ -97,6 +108,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 	'subpalettes' => array
 	(
 		'addImage'                    => 'singleSRC',
+		'published'                   => 'start,stop'
 	),
 
 	// Fields
@@ -187,8 +199,24 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 			'filter'                  => true,
 			'flag'                    => 1,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('doNotCopy'=>true, 'tl_class'=>'w50'),
+			'eval'                    => array('doNotCopy'=>true,'submitOnChange'=>true),
 			'sql'                     => "char(1) NOT NULL default ''"
+		),
+		'start' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['start'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
+		),
+		'stop' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['stop'],
+			'exclude'                 => true,
+			'inputType'               => 'text',
+			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'sql'                     => "varchar(10) NOT NULL default ''"
 		)
 	)
 );

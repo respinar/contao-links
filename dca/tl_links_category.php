@@ -1,7 +1,18 @@
 <?php
 
 /**
- * Table tl_members
+ * Contao Open Source CMS
+ *
+ * Copyright (c) 2005-2014 Leo Feyer
+ *
+ * @package   kinks
+ * @author    Hamid Abbaszadeh
+ * @license   GNU/LGPL
+ * @copyright 2014
+ */
+
+/**
+ * Table tl_links_category
  */
 $GLOBALS['TL_DCA']['tl_links_category'] = array
 (
@@ -85,7 +96,14 @@ $GLOBALS['TL_DCA']['tl_links_category'] = array
 	// Palettes
 	'palettes' => array
 	(
-		'default'                     => '{title_legend},title,alias;{description_legend:hide},description;'
+		'__selector__'                => array('protected'),
+		'default'                     => '{title_legend},title;{protected_legend:hide},protected;'
+	),
+
+	// Subpalettes
+	'subpalettes' => array
+	(
+		'protected'                   => 'groups',
 	),
 
 	// Fields
@@ -108,23 +126,23 @@ $GLOBALS['TL_DCA']['tl_links_category'] = array
 			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
 			'sql'                     => "varchar(128) NOT NULL default ''"
 		),
-		'alias' => array
+		'protected' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['alias'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['protected'],
 			'exclude'                 => true,
-			'search'                  => true,
-			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'rgxp'=>'alias','unique'=>true,'maxlength'=>128, 'tl_class'=>'w50'),
-			'sql'                     => "varchar(128) NOT NULL default ''"
+			'inputType'               => 'checkbox',
+			'eval'                    => array('submitOnChange'=>true),
+			'sql'                     => "char(1) NOT NULL default ''"
 		),
-		'description' => array
+		'groups' => array
 		(
-			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['description'],
+			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['groups'],
 			'exclude'                 => true,
-			'search'                  => true,
-			'inputType'               => 'textarea',
-			'eval'                    => array('rte'=>'tinyMCE'),
-			'sql'                     => "text NULL"
-		),
+			'inputType'               => 'checkbox',
+			'foreignKey'              => 'tl_member_group.name',
+			'eval'                    => array('mandatory'=>true, 'multiple'=>true),
+			'sql'                     => "blob NULL",
+			'relation'                => array('type'=>'hasMany', 'load'=>'lazy')
+		)
 	)
 );
