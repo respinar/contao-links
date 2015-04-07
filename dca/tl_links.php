@@ -27,8 +27,8 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 		(
 			'keys' => array
 			(
-				'id' => 'primary',
-				'pid' => 'index'
+				'id'    => 'primary',
+				'pid'   => 'index'
 			)
 		)
 	),
@@ -120,7 +120,9 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 		),
 		'pid' => array
 		(
-			'sql'                     => "int(10) unsigned NOT NULL default '0'"
+			'foreignKey'              => 'tl_links_category.title',
+			'sql'                     => "int(10) unsigned NOT NULL default '0'",
+			'relation'                => array('type'=>'belongsTo', 'load'=>'eager')
 		),
 		'sorting' => array
 		(

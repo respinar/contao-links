@@ -3,11 +3,9 @@
 /**
  * Contao Open Source CMS
  *
- * Copyright (c) 2005-2014 Leo Feyer
+ * Copyright (c) 2005-2015 Leo Feyer
  *
- * @package Links
- * @link    https://contao.org
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @license LGPL-3.0+
  */
 
 
@@ -26,12 +24,12 @@ ClassLoader::addNamespaces(array
 ClassLoader::addClasses(array
 (
 	// Modules
-	'links\ModuleLinksList'     => 'system/modules/links/modules/ModuleLinksList.php',
-	'links\ModuleLinks'         => 'system/modules/links/modules/ModuleLinks.php',
+	'links\ModuleLinksList'    => 'system/modules/links/modules/ModuleLinksList.php',
+	'links\ModuleLinks'        => 'system/modules/links/modules/ModuleLinks.php',
 
 	// Models
-	'Contao\LinksCategoryModel' => 'system/modules/links/models/LinksCategoryModel.php',
-	'Contao\LinksModel'         => 'system/modules/links/models/LinksModel.php',
+	'links\LinksCategoryModel' => 'system/modules/links/models/LinksCategoryModel.php',
+	'links\LinksModel'         => 'system/modules/links/models/LinksModel.php',
 ));
 
 
