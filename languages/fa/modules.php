@@ -1,0 +1,21 @@
+<?php
+/**
+ * Translations are managed using Transifex. To create a new translation
+ * or to help to maintain an existing one, please register at transifex.com.
+ *
+ * @link http://help.transifex.com/intro/translating.html
+ * @link https://www.transifex.com/projects/p/links/language/fa/
+ *
+ * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ *
+ * last-updated: 2015-05-29T12:25:35+04:30
+ */
+
+
+$GLOBALS['TL_LANG']['FMD']['links']['0']                = 'پیوندها';
+$GLOBALS['TL_LANG']['FMD']['links']['1']                = 'افزودن فهرست پیوندها به وب‌سایت';
+$GLOBALS['TL_LANG']['MOD']['links']['0']                = 'پیوندها';
+$GLOBALS['TL_LANG']['MOD']['links']['1']                = 'افزودن و مدیریت پیوندها';
+$GLOBALS['TL_LANG']['tl_module']['category_legend']     = 'دسته‌بندی پیوندها';
+$GLOBALS['TL_LANG']['tl_module']['links_category']['0'] = 'دسته‌بندی پیوندها';
+
