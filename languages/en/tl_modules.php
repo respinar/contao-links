@@ -12,7 +12,13 @@
 
 
 /**
- * Miscellaneous
+ * Fields
  */
-$GLOBALS['TL_LANG']['MSC']['emptyLinks'] = 'There is no links';
+$GLOBALS['TL_LANG']['tl_module']['links_category']  = array('Links category','');
+
+/**
+ * Legends
+ */
+$GLOBALS['TL_LANG']['tl_module']['category_legend'] = 'Links category';
+
 
