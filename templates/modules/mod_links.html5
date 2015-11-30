@@ -5,7 +5,9 @@
   <?php if (empty($this->links)): ?>
     <p class="empty"><?php echo $this->empty; ?></p>
   <?php else: ?>
-    <?php echo implode('', $this->links); ?>
+    <ul>
+      <?php echo implode('', $this->links); ?>
+    </ul>
   <?php endif; ?>
 
 <?php $this->endblock(); ?>
