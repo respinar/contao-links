@@ -15,15 +15,15 @@
  * Fields
  */
 $GLOBALS['TL_LANG']['tl_links_category']['title']              = array('Title','Please enter the categhory title.');
-$GLOBALS['TL_LANG']['tl_links_category']['alias']              = array('Alias','Please enter the categhory alias.');
-$GLOBALS['TL_LANG']['tl_links_category']['description']        = array('Description','Here you can enter the categhory description.');
+$GLOBALS['TL_LANG']['tl_links_category']['protected']          = array('Protect category','Show link items to certain member groups only.');
+$GLOBALS['TL_LANG']['tl_links_category']['groups']             = array('Allowed member groups','These groups will be able to see the link items in this category.');
 
 
 /**
  * Legends
  */
 $GLOBALS['TL_LANG']['tl_links_category']['title_legend']       = 'Title';
-$GLOBALS['TL_LANG']['tl_links_category']['description_legend'] = 'Description';
+$GLOBALS['TL_LANG']['tl_links_category']['protected_legend']   = 'Access protection';
 
 
 /**

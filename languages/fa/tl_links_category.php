@@ -4,13 +4,12 @@
  * or to help to maintain an existing one, please register at transifex.com.
  *
  * @link http://help.transifex.com/intro/translating.html
- * @link https://www.transifex.com/projects/p/links/language/fa/
+ * @link https://www.transifex.com/projects/p/contao-links/language/fa/
  *
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  *
- * last-updated: 2015-05-29T12:25:35+04:30
+ * last-updated: 2015-05-29T08:10:11+00:00
  */
-
 
 $GLOBALS['TL_LANG']['tl_links_category']['alias']['0']         = 'اسم مستعار';
 $GLOBALS['TL_LANG']['tl_links_category']['alias']['1']         = 'اسم مستعار دسته‌بندی را وارد نمایید.';
@@ -25,8 +24,13 @@ $GLOBALS['TL_LANG']['tl_links_category']['edit']['0']          = 'ویرایش �
 $GLOBALS['TL_LANG']['tl_links_category']['edit']['1']          = 'ویرایش دسته‌بندی شناسه‌ی %s';
 $GLOBALS['TL_LANG']['tl_links_category']['editheader']['0']    = 'ویرایش تنظیمات دسته‌بندی';
 $GLOBALS['TL_LANG']['tl_links_category']['editheader']['1']    = 'ویرایش تنظیمات دسته‌بندی شناسه‌ی %s';
+$GLOBALS['TL_LANG']['tl_links_category']['groups']['0']        = 'گروه‌های اعضاء مجاز';
+$GLOBALS['TL_LANG']['tl_links_category']['groups']['1']        = 'این گروه‌ها قادر به دیدن آیتم‌های پیوند در این دسته‌بندی خواهند بود.';
 $GLOBALS['TL_LANG']['tl_links_category']['new']['0']           = 'دسته‌بندی جدید';
 $GLOBALS['TL_LANG']['tl_links_category']['new']['1']           = 'افزودن یک دسته‌بندی جدید';
+$GLOBALS['TL_LANG']['tl_links_category']['protected']['0']     = 'حفاظت از دسته‌بندی';
+$GLOBALS['TL_LANG']['tl_links_category']['protected']['1']     = 'آیتم‌های پیوند را فقط برای گروه خاصی نمایش بده.';
+$GLOBALS['TL_LANG']['tl_links_category']['protected_legend']   = 'حفاظت دسترسی';
 $GLOBALS['TL_LANG']['tl_links_category']['show']['0']          = 'جزئیات دسته‌بندی';
 $GLOBALS['TL_LANG']['tl_links_category']['show']['1']          = 'نمایش جزئیات دسته‌بندی شناسه %s';
 $GLOBALS['TL_LANG']['tl_links_category']['title']['0']         = 'عنوان';

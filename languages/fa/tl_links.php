@@ -4,13 +4,12 @@
  * or to help to maintain an existing one, please register at transifex.com.
  *
  * @link http://help.transifex.com/intro/translating.html
- * @link https://www.transifex.com/projects/p/links/language/fa/
+ * @link https://www.transifex.com/projects/p/contao-links/language/fa/
  *
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  *
- * last-updated: 2015-05-29T12:25:35+04:30
+ * last-updated: 2015-05-29T08:10:11+00:00
  */
-
 
 $GLOBALS['TL_LANG']['tl_links']['addImage']['0']   = 'افزودن تصویر';
 $GLOBALS['TL_LANG']['tl_links']['addImage']['1']   = 'افزودن تصویر به پیوند.';
@@ -36,16 +35,22 @@ $GLOBALS['TL_LANG']['tl_links']['publish_legend']  = 'تنظیمات انتشا�
 $GLOBALS['TL_LANG']['tl_links']['published']['0']  = 'انتشار پیوند';
 $GLOBALS['TL_LANG']['tl_links']['published']['1']  = 'پیوند را در وب‌سایت به صورت عمومی نمایش می‌دهد.';
 $GLOBALS['TL_LANG']['tl_links']['rel']['0']        = 'خصیصه rel';
-$GLOBALS['TL_LANG']['tl_links']['rel']['1']        = 'خصیصه rel به خصیصه rel در نشانه‌گذاری اچ‌تی‌ام‌ال اضافه می‌شود.';
+$GLOBALS['TL_LANG']['tl_links']['rel']['1']        = 'خصوصیت rel به عنوان خصوصیت rel در نشانه‌‌گذاری HTML اضافه می‌شود (مثلا <em>nofollow</em>).';
 $GLOBALS['TL_LANG']['tl_links']['show']['0']       = 'جزئیات پیوند';
 $GLOBALS['TL_LANG']['tl_links']['show']['1']       = 'نمایش جزئیات پیوند شناسه %s';
 $GLOBALS['TL_LANG']['tl_links']['singleSRC']['0']  = 'پرونده منبع';
 $GLOBALS['TL_LANG']['tl_links']['singleSRC']['1']  = 'لطفا یک پرونده را از پوشه پرونده‌ها انتخاب نمایید.';
+$GLOBALS['TL_LANG']['tl_links']['start']['0']      = 'نمایش از';
+$GLOBALS['TL_LANG']['tl_links']['start']['1']      = 'مورد پیوند را قبل از  این روز در وب‌سایت نمایش نخواهد داد.';
+$GLOBALS['TL_LANG']['tl_links']['stop']['0']       = 'نمایش تا';
+$GLOBALS['TL_LANG']['tl_links']['stop']['1']       = 'مورد پیوند را بعد از  این روز در وب‌سایت نمایش نخواهد داد.';
 $GLOBALS['TL_LANG']['tl_links']['target']['0']     = 'مقصد';
 $GLOBALS['TL_LANG']['tl_links']['target']['1']     = 'باز کردن پیوند در پنجره جدید مرورگر.';
 $GLOBALS['TL_LANG']['tl_links']['title']['0']      = 'عنوان';
 $GLOBALS['TL_LANG']['tl_links']['title']['1']      = 'عنوان پیوند را وارد نمایید.';
 $GLOBALS['TL_LANG']['tl_links']['title_legend']    = 'عنوان';
+$GLOBALS['TL_LANG']['tl_links']['toggle']['0']     = 'انتشار/عدم انتشار پیوند';
+$GLOBALS['TL_LANG']['tl_links']['toggle']['1']     = 'انتشار/عدم انتشار پیوند شناسه‌ی %s';
 $GLOBALS['TL_LANG']['tl_links']['url']['0']        = 'نشانی وب';
 $GLOBALS['TL_LANG']['tl_links']['url']['1']        = 'نشانی وب پیوند را وارد نمایید.';
 
