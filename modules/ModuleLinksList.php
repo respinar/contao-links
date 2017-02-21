@@ -79,8 +79,31 @@ class ModuleLinksList extends \ModuleLinks
 			return;
 		}
 
+		$arrOptions = array();
+		if ($this->links_sortBy)
+		{
+			switch ($this->links_sortBy)
+			{
+				case 'title_asc':
+					$arrOptions['order'] = "title ASC";
+					break;
+				case 'title_desc':
+					$arrOptions['order'] = "title DESC";
+					break;
+				case 'date_asc':
+					$arrOptions['order'] = "tstamp ASC";
+					break;
+				case 'date_desc':
+					$arrOptions['order'] = "tstamp DESC";
+					break;
+				case 'custom':
+					$arrOptions['order'] = "sorting ASC";
+					break;
+			}
+		}
 
-		$objLinks = \LinksModel::findPublishedByPids($this->links_categories);
+
+		$objLinks = \LinksModel::findPublishedByPids($this->links_categories,null,0,0,$arrOptions);
 
 		// No items found
 		if ($objLinks !== null)
