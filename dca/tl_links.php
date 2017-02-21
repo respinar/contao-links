@@ -101,7 +101,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('addImage','published'),
-		'default'                     => '{title_legend},title,url;{href_legend},linkTitle,rel,target;{image_legend},addImage;{publish_legend},published'
+		'default'                     => '{title_legend},title,url;{href_legend},linkTitle,target,rel;{image_legend},addImage;{publish_legend},published'
 	),
 
 	// Subpalettes
@@ -157,7 +157,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 			'exclude'                 => true,
 			'inputType'               => 'select',
 			'options'				  => array('_blank','_top','_none'),
-			'eval'                    => array('tl_class'=>'w50'),
+			'eval'                    => array('tl_class'=>'w50 clr'),
 			'sql'                     => "char(10) NOT NULL default ''"
 		),
 		'linkTitle' => array
