@@ -150,7 +150,7 @@ class LinksModel extends \Model
 
 		if (!isset($arrOptions['order']))
 		{
-			//$arrOptions['order']  = "$t.date DESC";
+			$arrOptions['order']  = "$t.sorting";
 		}
 
 		$arrOptions['limit']  = $intLimit;
