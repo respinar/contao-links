@@ -1,6 +1,15 @@
 <?php
 
 /**
+ * Links Extension for Contao Open Source CMS
+ *
+ * @copyright  Copyright (c) 2014-2017, Respinar
+ * @author     Respinar <info@respinar.com>
+ * @license    http://opensource.org/licenses/lgpl-3.0.html LGPL
+ * @link       https://respinar.com/
+ */
+
+/**
  * Add palettes to tl_module
  */
 $GLOBALS['TL_DCA']['tl_module']['palettes']['links']   = '{title_legend},name,headline,type;{category_legend},links_categories;{template_legend},links_sortBy,links_template,customTpl;{image_legend:hide},imgSize;{protected_legend:hide},protected;{expert_legend:hide},guests,cssID,space';

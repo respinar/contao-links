@@ -1,14 +1,12 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Links Extension for Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
- *
- * @package   links
- * @author    Hamid Abbaszadeh
- * @license   GNU/LGPL
- * @copyright 2014
+ * @copyright  Copyright (c) 2014-2017, Respinar
+ * @author     Respinar <info@respinar.com>
+ * @license    http://opensource.org/licenses/lgpl-3.0.html LGPL
+ * @link       https://respinar.com/
  */
 
 /**

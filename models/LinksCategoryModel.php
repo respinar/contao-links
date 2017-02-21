@@ -1,13 +1,12 @@
 <?php
 
 /**
- * Contao Open Source CMS
+ * Links Extension for Contao Open Source CMS
  *
- * Copyright (c) 2005-2013 Leo Feyer
- *
- * @package Members
- * @link    https://respinar.com
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
+ * @copyright  Copyright (c) 2014-2017, Respinar
+ * @author     Respinar <info@respinar.com>
+ * @license    http://opensource.org/licenses/lgpl-3.0.html LGPL
+ * @link       https://respinar.com/
  */
 
 
@@ -19,11 +18,7 @@ namespace links;
 
 /**
  * Reads and writes Links categories
- *
- * @package   Models
- * @author    Hamid Abbaszadeh <http://respinar.com>
- * @copyright Hamid Abbaszadeh 2013-2014
- */
+*/
 class LinksCategoryModel extends \Model
 {
 
