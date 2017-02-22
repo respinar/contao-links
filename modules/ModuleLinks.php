@@ -33,21 +33,44 @@ abstract class ModuleLinks extends \Module
 
 		$objTemplate->setData($objLink->row());
 
-		$strImage = '';
-		$objImage = \FilesModel::findByPk($objLink->singleSRC);
+		$objTemplate->addImage = false;
 
-		$size = deserialize($this->imgSize);
-
-		// Add image
-		if ($objImage !== null)
+		// Add an image
+		if ($objLink->singleSRC != '')
 		{
-			$strImage = \Image::getHtml(\Image::get($objImage->path, $size[0],$size[1],$size[2]));
-		}
+			$objModel = \FilesModel::findByUuid($objLink->singleSRC);
+
+			if ($objModel === null)
+			{
+				if (!\Validator::isUuid($objLink->singleSRC))
+				{
+					$objTemplate->text = '<p class="error">'.$GLOBALS['TL_LANG']['ERR']['version2format'].'</p>';
+				}
+			}
+			elseif (is_file(TL_ROOT . '/' . $objModel->path))
+			{
+				// Do not override the field now that we have a model registry (see #6303)
+				$arrLink = $objLink->row();
+
+				// Override the default image size
+				if ($this->imgSize != '')
+				{
+					$size = deserialize($this->imgSize);
+
+					if ($size[0] > 0 || $size[1] > 0 || is_numeric($size[2]))
+					{
+						$arrLink['size'] = $this->imgSize;
+					}
+				}
+
+				$arrLink['singleSRC'] = $objModel->path;				
+				$this->addImageToTemplate($objTemplate, $arrLink);
+			}
+		}		
 
 		$objTemplate->class     = $strClass;
 		$objTemplate->hrefclass = $objLink->class;
 		$objTemplate->linkTitle = $objLink->linkTitle ? $objLink->linkTitle : $objLink->title;
-		$objTemplate->image     = $strImage;
 
 		return $objTemplate->parse();
 

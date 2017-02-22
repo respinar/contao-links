@@ -1,6 +1,16 @@
 
 <li class="link<?= $this->class; ?>">
-	<a href="<?= $this->url; ?>" title="<?= $this->linkTitle; ?>" target="<?= $this->target; ?>" <?php if($this->rel): ?>rel="<?= $this->rel; ?>"<?php endif; ?> <?php if($this->hrefclass): ?>class="<?= $this->hrefclass; ?>"<?php endif; ?>
-	<figure class="image"><?= $this->image; ?></figure>
+	<a href="<?= $this->url; ?>" title="<?= $this->linkTitle; ?>" target="<?= $this->target; ?>" <?php if($this->rel): ?>rel="<?= $this->rel; ?>"<?php endif; ?> <?php if($this->hrefclass): ?>class="<?= $this->hrefclass; ?>"<?php endif; ?>>
+
+	<figure class="image_container">
+ 
+      <?php $this->insert('picture_default', $this->picture); ?>
+ 
+      <?php if ($this->caption): ?>
+        <figcaption class="caption" style="width:<?= $this->arrSize[0]; ?>px"><?= $this->caption; ?></figcaption>
+      <?php endif; ?>
+
+  </figure>
+
 	</a>
 </li>
