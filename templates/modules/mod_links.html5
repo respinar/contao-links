@@ -3,7 +3,7 @@
 <?php $this->block('content'); ?>
 
   <?php if (empty($this->links)): ?>
-    <p class="empty"><?php echo $this->empty; ?></p>
+    <p class="empty"><?= $this->empty; ?></p>
   <?php else: ?>
     <ul>
       <?php echo implode('', $this->links); ?>

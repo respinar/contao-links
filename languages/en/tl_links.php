@@ -16,7 +16,8 @@
 $GLOBALS['TL_LANG']['tl_links']['title']          = array('Title','Please enter the link title.');
 $GLOBALS['TL_LANG']['tl_links']['linkTitle']      = array('Link title','The link title is added as title attribute in the HTML markup.');
 $GLOBALS['TL_LANG']['tl_links']['published']      = array('Publish link','Make the link publicly visible on the website.');
-$GLOBALS['TL_LANG']['tl_links']['rel']            = array('rel Attribute','The rel Attribute is added as rel attribute in the HTML markup (e.g. <em>nofollow</em>).');
+$GLOBALS['TL_LANG']['tl_links']['rel']            = array('rel','The rel Attribute is added as rel attribute in the HTML markup (e.g. <em>nofollow</em>).');
+$GLOBALS['TL_LANG']['tl_links']['class']          = array('CSS class','The class Attribute is added as class attribute in the HTML markup.');
 $GLOBALS['TL_LANG']['tl_links']['show']           = array('Link details','Show the details of link ID %s');
 $GLOBALS['TL_LANG']['tl_links']['singleSRC']      = array('Source file','Please select a file or folder from the files directory.');
 $GLOBALS['TL_LANG']['tl_links']['target']         = array('Target','Open the link in a new browser window.');
@@ -29,7 +30,7 @@ $GLOBALS['TL_LANG']['tl_links']['stop']           = array('Show until','Do not s
 /**
  * Legends
  */
-$GLOBALS['TL_LANG']['tl_links']['href_legend']    = 'Hyperlink settings';
+$GLOBALS['TL_LANG']['tl_links']['href_legend']    = 'Hyperlink attributes';
 $GLOBALS['TL_LANG']['tl_links']['image_legend']   = 'Image settings';
 $GLOBALS['TL_LANG']['tl_links']['title_legend']   = 'Title';
 $GLOBALS['TL_LANG']['tl_links']['publish_legend'] = 'Publish Settings';

@@ -99,7 +99,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 	'palettes' => array
 	(
 		'__selector__'                => array('addImage','published'),
-		'default'                     => '{title_legend},title,url;{href_legend},linkTitle,target,rel;{image_legend},addImage;{publish_legend},published'
+		'default'                     => '{title_legend},title,url;{href_legend},linkTitle,target,class,rel;{image_legend},addImage;{publish_legend},published'
 	),
 
 	// Subpalettes
@@ -155,7 +155,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 			'exclude'                 => true,
 			'inputType'               => 'select',
 			'options'				  => array('_blank','_top','_none'),
-			'eval'                    => array('tl_class'=>'w50 clr'),
+			'eval'                    => array('tl_class'=>'w50'),
 			'sql'                     => "char(10) NOT NULL default ''"
 		),
 		'linkTitle' => array
@@ -170,6 +170,15 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 		'rel' => array
 		(
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['rel'],
+			'exclude'                 => true,
+			'search'                  => true,
+			'inputType'               => 'text',
+			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'sql'                     => "varchar(255) NOT NULL default ''"
+		),
+		'class' => array
+		(
+			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['class'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',

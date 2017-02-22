@@ -45,6 +45,7 @@ abstract class ModuleLinks extends \Module
 		}
 
 		$objTemplate->class     = $strClass;
+		$objTemplate->hrefclass = $objLink->class;
 		$objTemplate->linkTitle = $objLink->linkTitle ? $objLink->linkTitle : $objLink->title;
 		$objTemplate->image     = $strImage;
 
