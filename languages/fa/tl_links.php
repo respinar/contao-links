@@ -8,11 +8,13 @@
  *
  * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
  *
- * last-updated: 2015-05-29T08:10:11+00:00
+ * last-updated: 2017-02-21T16:14:59+00:00
  */
 
 $GLOBALS['TL_LANG']['tl_links']['addImage']['0']   = 'افزودن تصویر';
 $GLOBALS['TL_LANG']['tl_links']['addImage']['1']   = 'افزودن تصویر به پیوند.';
+$GLOBALS['TL_LANG']['tl_links']['class']['0']      = 'CSS class';
+$GLOBALS['TL_LANG']['tl_links']['class']['1']      = 'خصیصه‌ی class، به خصیصه‌ی class در نشانه‌گذاری HTML اضافه خواهد شد.';
 $GLOBALS['TL_LANG']['tl_links']['copy']['0']       = 'رونوشت پیوند';
 $GLOBALS['TL_LANG']['tl_links']['copy']['1']       = 'رونوشت پیوند شناسه‌ی %s';
 $GLOBALS['TL_LANG']['tl_links']['cut']['0']        = 'جابجایی پیوند';
@@ -21,7 +23,7 @@ $GLOBALS['TL_LANG']['tl_links']['delete']['0']     = 'حذف پیوند';
 $GLOBALS['TL_LANG']['tl_links']['delete']['1']     = 'حذف پیوند شناسه‌ی %s';
 $GLOBALS['TL_LANG']['tl_links']['edit']['0']       = 'ویرایش پیوند';
 $GLOBALS['TL_LANG']['tl_links']['edit']['1']       = 'ویرایش پیوند شناسه‌ی %s';
-$GLOBALS['TL_LANG']['tl_links']['href_legend']     = 'تنظیمات ابرپیوند';
+$GLOBALS['TL_LANG']['tl_links']['href_legend']     = 'خصیصه‌های ابرپیوند';
 $GLOBALS['TL_LANG']['tl_links']['image_legend']    = 'تنظیمات تصویر';
 $GLOBALS['TL_LANG']['tl_links']['linkTitle']['0']  = 'عنوان پیوند';
 $GLOBALS['TL_LANG']['tl_links']['linkTitle']['1']  = 'عنوان پیوند به خصیصه title در نشانه‌گذاری اچ‌تی‌ام‌ال اضافه می‌شود.';
@@ -34,7 +36,7 @@ $GLOBALS['TL_LANG']['tl_links']['pastenew']['1']   = 'افزودن بعد از �
 $GLOBALS['TL_LANG']['tl_links']['publish_legend']  = 'تنظیمات انتشار';
 $GLOBALS['TL_LANG']['tl_links']['published']['0']  = 'انتشار پیوند';
 $GLOBALS['TL_LANG']['tl_links']['published']['1']  = 'پیوند را در وب‌سایت به صورت عمومی نمایش می‌دهد.';
-$GLOBALS['TL_LANG']['tl_links']['rel']['0']        = 'خصیصه rel';
+$GLOBALS['TL_LANG']['tl_links']['rel']['0']        = 'rel';
 $GLOBALS['TL_LANG']['tl_links']['rel']['1']        = 'خصوصیت rel به عنوان خصوصیت rel در نشانه‌‌گذاری HTML اضافه می‌شود (مثلا <em>nofollow</em>).';
 $GLOBALS['TL_LANG']['tl_links']['show']['0']       = 'جزئیات پیوند';
 $GLOBALS['TL_LANG']['tl_links']['show']['1']       = 'نمایش جزئیات پیوند شناسه %s';
