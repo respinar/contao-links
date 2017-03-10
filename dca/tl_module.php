@@ -53,21 +53,16 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = array
 
 /**
  * Class tl_links
- *
- * Provide miscellaneous methods that are used by the data configuration array.
- * @copyright  Hamid Abbaszadeh 2014
- * @author     Hamid Abbaszadeh <http://respinar.com>
- * @package    Links
  */
 class tl_module_links extends Backend
 {
 	/**
 	 * Return all links templates as array
-	 * @param object
+	 *
 	 * @return array
 	 */
-	public function getLinksTemplates(DataContainer $dc)
+	public function getLinksTemplates()
 	{
-		return $this->getTemplateGroup('links_', $dc->activeRecord->pid);
+		return $this->getTemplateGroup('links_');
 	}
 }
