@@ -9,31 +9,6 @@
  * @link       https://respinar.com/
  */
 
-
-/**
- * Register the namespaces
- */
-ClassLoader::addNamespaces(array
-(
-	'links',
-));
-
-
-/**
- * Register the classes
- */
-ClassLoader::addClasses(array
-(
-	// Modules
-	'links\ModuleLinksList'    => 'system/modules/links/modules/ModuleLinksList.php',
-	'links\ModuleLinks'        => 'system/modules/links/modules/ModuleLinks.php',
-
-	// Models
-	'links\LinksCategoryModel' => 'system/modules/links/models/LinksCategoryModel.php',
-	'links\LinksModel'         => 'system/modules/links/models/LinksModel.php',
-));
-
-
 /**
  * Register the templates
  */
