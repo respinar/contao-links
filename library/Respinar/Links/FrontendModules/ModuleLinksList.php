@@ -12,7 +12,7 @@
 /**
  * Namespace
  */
-namespace links;
+namespace Respinar\Links;
 
 /**
  * Class ModuleLinksList
