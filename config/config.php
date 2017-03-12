@@ -26,4 +26,4 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['miscellaneous']['links']   = 'ModuleLinksList';
+$GLOBALS['FE_MOD']['miscellaneous']['links']   = 'Respinar\Links\ModuleLinksList';
