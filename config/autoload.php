@@ -11,27 +11,11 @@
 
 
 /**
- * Register the namespaces
+ * Register PSR-0 namespaces
  */
-ClassLoader::addNamespaces(array
-(
-	'Respinar\Links',
-));
-
-
-/**
- * Register the classes
- */
-ClassLoader::addClasses(array
-(
-	// Modules
-	'Respinar\Links\ModuleLinksList'    => 'system/modules/links/library/Respinar/Links/FrontendModules/ModuleLinksList.php',
-	'Respinar\Links\ModuleLinks'        => 'system/modules/links/library/Respinar/Links/FrontendModules/ModuleLinks.php',
-
-	// Models
-	'Respinar\Links\LinksCategoryModel' => 'system/modules/links/library/Respinar/Links/Models/LinksCategoryModel.php',
-	'Respinar\Links\LinksModel'         => 'system/modules/links/library/Respinar/Links/Models/LinksModel.php',
-));
+ if (class_exists('NamespaceClassLoader')) {
+    NamespaceClassLoader::add('Respinar\Links', 'system/modules/links/library');
+}
 
 
 /**
