@@ -12,7 +12,9 @@
 /**
  * Namespace
  */
-namespace Respinar\Links;
+namespace Respinar\Links\Frontend\Module;
+
+use Respinar\Links\Model\LinksCategoryModel;
 
 /**
  * Class ModuleLinks
@@ -109,7 +111,7 @@ abstract class ModuleLinks extends \Module
 		}
 
 		$this->import('FrontendUser', 'User');
-		$objCategory = \LinksCategoryModel::findMultipleByIds($arrCategories);
+		$objCategory = LinksCategoryModel::findMultipleByIds($arrCategories);
 		$arrCategories = array();
 
 		if ($objCategory !== null)

@@ -22,8 +22,13 @@ array_insert($GLOBALS['BE_MOD']['content'], 1, array
 	)
 ));
 
+/**
+ * Register models
+ */
+ $GLOBALS['TL_MODELS']['tl_links']          = 'Respinar\Links\Model\LinksModel';
+ $GLOBALS['TL_MODELS']['tl_links_category'] = 'Respinar\Links\Model\LinksCategoryModel';
 
 /**
  * Front end modules
  */
-$GLOBALS['FE_MOD']['miscellaneous']['links']   = 'Respinar\Links\ModuleLinksList';
+$GLOBALS['FE_MOD']['miscellaneous']['links']   = 'Respinar\Links\Frontend\Module\ModuleLinksList';

@@ -12,7 +12,10 @@
 /**
  * Namespace
  */
-namespace Respinar\Links;
+namespace Respinar\Links\Frontend\Module;
+
+use Respinar\Links\Model\LinksModel;
+use Respinar\Links\Frontend\Module\ModuleLinks;
 
 /**
  * Class ModuleLinksList
@@ -20,7 +23,7 @@ namespace Respinar\Links;
  * Front end module "links list".
  */
 
-class ModuleLinksList extends \ModuleLinks
+class ModuleLinksList extends ModuleLinks
 {
 
 	/**
@@ -69,7 +72,7 @@ class ModuleLinksList extends \ModuleLinks
 
 		$this->Template->empty = $GLOBALS['TL_LANG']['MSC']['emptyLinks'];
 
-		$intTotal = \LinksModel::countPublishedByPids($this->links_categories);
+		$intTotal = LinksModel::countPublishedByPids($this->links_categories);
 
 
 		if ($intTotal < 1)
@@ -101,7 +104,7 @@ class ModuleLinksList extends \ModuleLinks
 		}
 
 
-		$objLinks = \LinksModel::findPublishedByPids($this->links_categories,null,0,0,$arrOptions);
+		$objLinks = LinksModel::findPublishedByPids($this->links_categories,null,0,0,$arrOptions);
 
 		// No items found
 		if ($objLinks !== null)
