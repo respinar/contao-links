@@ -23,13 +23,13 @@
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\Links\\": "library/"
+            "Respinar\\Links\\": "src/library/"
         }
     },
     "extra": {
         "contao": {
             "sources": {
-                "": "system/modules/links"
+                "src": "system/modules/links"
             },
             "transifex": {
                 "project": "contao-links",
