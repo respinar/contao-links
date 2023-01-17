@@ -1,14 +1,14 @@
 {
     "name": "respinar/contao-links",
-    "description": "Links module for Contao",
+    "description": "Links bundle for Contao",
     "keywords": ["contao", "link"],
-    "type": "contao-module",
+    "type": "contao-bundle",
     "homepage": "https://respinar.com",
     "license": "LGPL-3.0+",
     "authors": [
         {
-            "name": "Hamid Abbaszadeh",
-            "email": "info@respinar.com",
+            "name": "Hamid Peywasti",
+            "email": "hamid@respinar.com",
             "homepage": "http://respinar.com",
             "role": "Developer"
         }
@@ -17,26 +17,15 @@
         "issues": "https://github.com/respinar/contao-links/issues"
     },
     "require": {
-        "php": ">=5.4",
-        "contao/core-bundle":"~3.5 || ~4.4",
-        "contao-community-alliance/composer-plugin":"^2.4.1 || ~3.0"
+        "php": "^7.4 || ^ 8.0",
+        "contao/core-bundle":"^4.13 || ^5.2"
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\Links\\": "src/library/"
+            "Respinar\\ContaoLinks\\": "src/"
         }
     },
     "extra": {
-        "contao": {
-            "sources": {
-                "src": "system/modules/links"
-            },
-            "transifex": {
-                "project": "contao-links",
-                "prefix": "master-",
-                "languages_cto": "languages",
-                "languages_tx": ".tx"
-            }
-        }
+        "contao-manager-plugin": "Respinar\\ContaoLinks\\ContaoManager\\Plugin"
     }
 }
