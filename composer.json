@@ -17,13 +17,22 @@
         "issues": "https://github.com/respinar/contao-links/issues"
     },
     "require": {
-        "php": "^7.4 || ^8.0",
+        "php": "^8.0",
         "contao/core-bundle":"^4.13 || ^5.2"
     },
     "autoload": {
         "psr-4": {
             "Respinar\\ContaoLinks\\": "src/"
-        }
+        },
+        "classmap": [
+            "contao/"
+        ],
+        "exclude-from-classmap": [
+            "contao/config/",
+            "contao/dca/",
+            "contao/languages/",
+            "contao/templates/"
+        ]
     },
     "extra": {
         "contao-manager-plugin": "Respinar\\ContaoLinks\\ContaoManager\\Plugin"
