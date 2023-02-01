@@ -9,6 +9,8 @@
  * @link       https://respinar.com/
  */
 
+use Contao\DC_Table;
+
 /**
  * Table tl_links_category
  */
@@ -18,7 +20,7 @@ $GLOBALS['TL_DCA']['tl_links_category'] = array
 	// Config
 	'config' => array
 	(
-		'dataContainer'               => 'Table',
+		'dataContainer'               => DC_Table::class,
 		'ctable'                      => array('tl_links'),
 		'enableVersioning'            => true,
 		'sql' => array
