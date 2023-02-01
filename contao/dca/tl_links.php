@@ -9,6 +9,8 @@
  * @link       https://respinar.com/
  */
 
+use Contao\DC_Table;
+
  /**
  * Load tl_content language file
  */
@@ -23,7 +25,7 @@ $GLOBALS['TL_DCA']['tl_links'] = array
 	// Config
 	'config' => array
 	(
-		'dataContainer'               => 'Table',
+		'dataContainer'               => DC_Table::class,
 		'ptable'                      => 'tl_links_category',
 		'enableVersioning'            => true,
 		'sql' => array
