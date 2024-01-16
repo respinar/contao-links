@@ -1,14 +1,12 @@
 <?php
 
-/**
- * Links Extension for Contao Open Source CMS
+/*
+ * This file is part of Contao Links Bundle.
  *
- * @copyright  Copyright (c) 2014-2017, Respinar
- * @author     Respinar <info@respinar.com>
- * @license    http://opensource.org/licenses/lgpl-3.0.html LGPL
- * @link       https://respinar.com/
- */
- 
+ * (c) Hamid Peywasti 2014-2024 <hamid@respinar.com>
+ *
+ * @license LGPL-3.0-or-later
+ */ 
 
 /**
  * Back end modules
