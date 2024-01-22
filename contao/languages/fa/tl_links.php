@@ -1,14 +1,10 @@
 <?php
-/**
- * Translations are managed using Transifex. To create a new translation
- * or to help to maintain an existing one, please register at transifex.com.
+/*
+ * This file is part of Contao Links Bundle.
  *
- * @link http://help.transifex.com/intro/translating.html
- * @link https://www.transifex.com/projects/p/contao-links/language/fa/
+ * (c) Hamid Peywasti 2014-2024 <hamid@respinar.com>
  *
- * @license http://www.gnu.org/licenses/lgpl-3.0.html LGPL
- *
- * last-updated: 2017-02-21T16:14:59+00:00
+ * @license LGPL-3.0-or-later
  */
 
 $GLOBALS['TL_LANG']['tl_links']['addImage']['0']   = 'افزودن تصویر';
