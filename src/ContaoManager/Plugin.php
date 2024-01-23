@@ -3,11 +3,11 @@
 declare(strict_types=1);
 
 /*
- * This file is part of Contao Products Bundle.
+ * This file is part of Contao Links Bundle.
  *
- * (c) Hamid Peywasti 2023 <hamid@respinar.com>
+ * (c) Hamid Peywasti 2014-2024 <hamid@respinar.com>
  *
- * @license MIT
+ * @license LGPL-3.0-or-later
  */
 
 namespace Respinar\ContaoLinks\ContaoManager;
