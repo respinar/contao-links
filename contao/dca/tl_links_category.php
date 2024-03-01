@@ -13,135 +13,112 @@ use Contao\DC_Table;
 /**
  * Table tl_links_category
  */
-$GLOBALS['TL_DCA']['tl_links_category'] = array
-(
+$GLOBALS['TL_DCA']['tl_links_category'] = [
 
 	// Config
-	'config' => array
-	(
+	'config' => [
 		'dataContainer'               => DC_Table::class,
-		'ctable'                      => array('tl_links'),
+		'ctable'                      => ['tl_links'],
 		'enableVersioning'            => true,
-		'sql' => array
-		(
-			'keys' => array
-			(
+		'sql' => [
+			'keys' => [
 				'id' => 'primary'
-			)
-		)
-	),
+			]
+		]
+	],
 
 	// List
-	'list' => array
-	(
-		'sorting' => array
-		(
+	'list' => [
+		'sorting' => [
 			'mode'                    => 1,
-			'fields'                  => array('title'),
+			'fields'                  => ['title'],
 			'flag'                    => 1,
 			'panelLayout'             => 'filter;search,limit'
-		),
-		'label' => array
-		(
-			'fields'                  => array('title'),
+		],
+		'label' => [
+			'fields'                  => ['title'],
 			'format'                  => '%s',
-		),
-		'global_operations' => array
-		(
-			'all' => array
-			(
+		],
+		'global_operations' => [
+			'all' => [
 				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
 				'href'                => 'act=select',
 				'class'               => 'header_edit_all',
 				'attributes'          => 'onclick="Backend.getScrollOffset()" accesskey="e"'
-			)
-		),
-		'operations' => array
-		(
-			'edit' => array
-			(
+			]
+		],
+		'operations' => [
+			'edit' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links_category']['edit'],
 				'href'                => 'table=tl_links',
 				'icon'                => 'edit.gif'
-			),
-			'editheader' => array
-			(
+			],
+			'editheader' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links_category']['editheader'],
 				'href'                => 'act=edit',
 				'icon'                => 'header.gif'
-			),
-			'copy' => array
-			(
+			],
+			'copy' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links_category']['copy'],
 				'href'                => 'act=copy',
 				'icon'                => 'copy.gif'
-			),
-			'delete' => array
-			(
+			],
+			'delete' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links_category']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
-			),
-			'show' => array
-			(
+			],
+			'show' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links_category']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
-			)
-		)
-	),
+			]
+		]
+	],
 
 	// Palettes
-	'palettes' => array
-	(
-		'__selector__'                => array('protected'),
+	'palettes' => [
+		'__selector__'                => ['protected'],
 		'default'                     => '{title_legend},title;{protected_legend:hide},protected;'
-	),
+	],
 
 	// Subpalettes
-	'subpalettes' => array
-	(
+	'subpalettes' => [
 		'protected'                   => 'groups',
-	),
+	],
 
 	// Fields
-	'fields' => array
-	(
-		'id' => array
-		(
+	'fields' => [
+		'id' => [
 			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-		),
-		'tstamp' => array
-		(
+		],
+		'tstamp' => [
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
-		),
-		'title' => array
-		(
+		],
+		'title' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'eval'                    => ['mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(128) NOT NULL default ''"
-		),
-		'protected' => array
-		(
+		],
+		'protected' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['protected'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true),
+			'eval'                    => ['submitOnChange'=>true],
 			'sql'                     => "char(1) NOT NULL default ''"
-		),
-		'groups' => array
-		(
+		],
+		'groups' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links_category']['groups'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
 			'foreignKey'              => 'tl_member_group.name',
-			'eval'                    => array('mandatory'=>true, 'multiple'=>true),
+			'eval'                    => ['mandatory'=>true, 'multiple'=>true],
 			'sql'                     => "blob NULL",
-			'relation'                => array('type'=>'hasMany', 'load'=>'lazy')
-		)
-	)
-);
+			'relation'                => ['type'=>'hasMany', 'load'=>'lazy']
+		]
+	]
+];
