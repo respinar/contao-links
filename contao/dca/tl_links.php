@@ -44,7 +44,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 		],
 		'global_operations' => [
 			'all' => [
-				'label' => &$GLOBALS['TL_LANG']['MSC']['all'],
 				'href' => 'act=select',
 				'class' => 'header_edit_all',
 				'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"'
@@ -52,33 +51,27 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 		],
 		'operations' => [
 			'edit' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links']['edit'],
 				'href' => 'act=edit',
 				'icon' => 'edit.svg'
 			],
 			'copy' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links']['copy'],
 				'href' => 'act=paste&amp;mode=copy',
 				'icon' => 'copy.svg'
 			],
 			'cut' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links']['cut'],
 				'href' => 'act=paste&amp;mode=cut',
 				'icon' => 'cut.svg'
 			],
 			'delete' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links']['delete'],
 				'href' => 'act=delete',
 				'icon' => 'delete.svg',
 				'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			],
 			'toggle' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links']['toggle'],
 				'icon' => 'visible.svg',
 				'href' => 'act=toggle&amp;field=published',
 			],
 			'show' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links']['show'],
 				'href' => 'act=show',
 				'icon' => 'show.svg'
 			]
@@ -114,7 +107,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "int(10) unsigned NOT NULL default '0'"
 		],
 		'title' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['title'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -122,7 +114,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(128) NOT NULL default ''"
 		],
 		'url' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['url'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -130,7 +121,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default 'http://'"
 		],
 		'target' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['target'],
 			'exclude' => true,
 			'inputType' => 'select',
 			'options' => ['_blank','_top','_none'],
@@ -138,7 +128,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "char(10) NOT NULL default ''"
 		],
 		'linkTitle' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['linkTitle'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -146,7 +135,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'rel' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['rel'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -154,7 +142,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'class' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['class'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -162,21 +149,18 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'addImage' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['addImage'],
 			'exclude' => true,
 			'inputType' => 'checkbox',
 			'eval' => ['submitOnChange' => true],
 			'sql' => "char(1) NOT NULL default ''"
 		],
 		'singleSRC' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['singleSRC'],
 			'exclude' => true,
 			'inputType' => 'fileTree',
 			'eval' => ['mandatory' => true,'fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => $GLOBALS['TL_CONFIG']['validImageTypes']],
 			'sql' => "binary(16) NULL"
 		],
 		'alt' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_content']['alt'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -184,7 +168,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'caption' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_content']['caption'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -192,7 +175,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'published' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['published'],
 			'exclude' => true,
 			'filter' => true,
 			'toggle' => true,
@@ -202,14 +184,12 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "char(1) NOT NULL default ''"
 		],
 		'start' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['start'],
 			'exclude' => true,
 			'inputType' => 'text',
 			'eval' => ['rgxp' => 'datim', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
 			'sql' => "varchar(10) NOT NULL default ''"
 		],
 		'stop' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links']['stop'],
 			'exclude' => true,
 			'inputType' => 'text',
 			'eval' => ['rgxp' => 'datim', 'datepicker' => true, 'tl_class' => 'w50 wizard'],
