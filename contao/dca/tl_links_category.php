@@ -41,7 +41,6 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
 		],
 		'global_operations' => [
 			'all' => [
-				'label' => &$GLOBALS['TL_LANG']['MSC']['all'],
 				'href' => 'act=select',
 				'class' => 'header_edit_all',
 				'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"'
@@ -49,28 +48,23 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
 		],
 		'operations' => [
 			'edit' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links_category']['edit'],
 				'href' => 'table=tl_links',
 				'icon' => 'edit.svg'
 			],
 			'editheader' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links_category']['editheader'],
 				'href' => 'act=edit',
 				'icon' => 'header.svg'
 			],
 			'copy' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links_category']['copy'],
 				'href' => 'act=copy',
 				'icon' => 'copy.svg'
 			],
 			'delete' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links_category']['delete'],
 				'href' => 'act=delete',
 				'icon' => 'delete.svg',
 				'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			],
 			'show' => [
-				'label' => &$GLOBALS['TL_LANG']['tl_links_category']['show'],
 				'href' => 'act=show',
 				'icon' => 'show.svg'
 			]
@@ -97,7 +91,6 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
 			'sql' => "int(10) unsigned NOT NULL default '0'"
 		],
 		'title' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links_category']['title'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -105,14 +98,12 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
 			'sql' => "varchar(128) NOT NULL default ''"
 		],
 		'protected' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links_category']['protected'],
 			'exclude' => true,
 			'inputType' => 'checkbox',
 			'eval' => ['submitOnChange' => true],
 			'sql' => "char(1) NOT NULL default ''"
 		],
 		'groups' => [
-			'label' => &$GLOBALS['TL_LANG']['tl_links_category']['groups'],
 			'exclude' => true,
 			'inputType' => 'checkbox',
 			'foreignKey' => 'tl_member_group.name',
