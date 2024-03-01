@@ -20,7 +20,6 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['links'] = '{title_legend},name,head
  * Add fields to tl_module
  */
 $GLOBALS['TL_DCA']['tl_module']['fields']['links_categories'] = [
-	'label' => &$GLOBALS['TL_LANG']['tl_module']['links_categories'],
 	'exclude' => true,
 	'inputType' => 'checkbox',
 	'foreignKey' => 'tl_links_category.title',
@@ -29,7 +28,6 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['links_categories'] = [
 ];
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['links_sortBy'] = [
-	'label' => &$GLOBALS['TL_LANG']['tl_module']['links_sortBy'],
 	'default' => 'custom',
 	'exclude' => true,
 	'inputType' => 'select',
@@ -40,7 +38,6 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['links_sortBy'] = [
 ];
 
 $GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = [
-	'label' => &$GLOBALS['TL_LANG']['tl_module']['links_template'],
 	'exclude' => true,
 	'inputType' => 'select',
 	'options_callback' => static function () {
