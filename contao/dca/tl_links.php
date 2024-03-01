@@ -18,241 +18,206 @@ System::loadLanguageFile('tl_content');
 /**
  * Table tl_links
  */
-$GLOBALS['TL_DCA']['tl_links'] = array
-(
+$GLOBALS['TL_DCA']['tl_links'] = [
 
 	// Config
-	'config' => array
-	(
+	'config' => [
 		'dataContainer'               => DC_Table::class,
 		'ptable'                      => 'tl_links_category',
 		'enableVersioning'            => true,
-		'sql' => array
-		(
-			'keys' => array
-			(
+		'sql' => [
+			'keys' => [
 				'id'    => 'primary',
 				'pid'   => 'index'
-			)
-		)
-	),
+			]
+		]
+	],
 
 	// List
-	'list' => array
-	(
-		'sorting' => array
-		(
+	'list' => [
+		'sorting' => [
 			'mode'                    => 4,
-			'fields'                  => array('sorting'),
-			'headerFields'            => array('title'),
+			'fields'                  => ['sorting'],
+			'headerFields'            => ['title'],
 			'panelLayout'             => 'search,limit',
-			'child_record_callback'   => array('tl_links', 'generateLinkRow')
-		),
-		'global_operations' => array
-		(
-			'all' => array
-			(
+			'child_record_callback'   => ['tl_links', 'generateLinkRow']
+		],
+		'global_operations' => [
+			'all' => [
 				'label'               => &$GLOBALS['TL_LANG']['MSC']['all'],
 				'href'                => 'act=select',
 				'class'               => 'header_edit_all',
 				'attributes'          => 'onclick="Backend.getScrollOffset()" accesskey="e"'
-			)
-		),
-		'operations' => array
-		(
-			'edit' => array
-			(
+			]
+		],
+		'operations' => [
+			'edit' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links']['edit'],
 				'href'                => 'act=edit',
 				'icon'                => 'edit.gif'
-			),
-			'copy' => array
-			(
+			],
+			'copy' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links']['copy'],
 				'href'                => 'act=paste&amp;mode=copy',
 				'icon'                => 'copy.gif'
-			),
-			'cut' => array
-			(
+			],
+			'cut' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links']['cut'],
 				'href'                => 'act=paste&amp;mode=cut',
 				'icon'                => 'cut.gif'
-			),
-			'delete' => array
-			(
+			],
+			'delete' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links']['delete'],
 				'href'                => 'act=delete',
 				'icon'                => 'delete.gif',
 				'attributes'          => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
-			),
-			'toggle' => array
-			(
+			],
+			'toggle' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links']['toggle'],
 				'icon'                => 'visible.gif',
 				'attributes'          => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback'     => array('tl_links', 'toggleIcon')
-			),
-			'show' => array
-			(
+				'button_callback'     => ['tl_links', 'toggleIcon']
+			],
+			'show' => [
 				'label'               => &$GLOBALS['TL_LANG']['tl_links']['show'],
 				'href'                => 'act=show',
 				'icon'                => 'show.gif'
-			)
-		)
-	),
+			]
+		]
+	],
 
 	// Palettes
-	'palettes' => array
-	(
-		'__selector__'                => array('addImage','published'),
+	'palettes' => [
+		'__selector__'                => ['addImage','published'],
 		'default'                     => '{title_legend},title,url;{href_legend},linkTitle,target,class,rel;{image_legend},addImage;{publish_legend},published'
-	),
+	],
 
 	// Subpalettes
-	'subpalettes' => array
-	(
+	'subpalettes' => [
 		'addImage'                    => 'singleSRC,alt,caption',
 		'published'                   => 'start,stop'
-	),
+	],
 
 	// Fields
-	'fields' => array
-	(
-		'id' => array
-		(
+	'fields' => [
+		'id' => [
 			'sql'                     => "int(10) unsigned NOT NULL auto_increment"
-		),
-		'pid' => array
-		(
+		],
+		'pid' => [
 			'foreignKey'              => 'tl_links_category.title',
 			'sql'                     => "int(10) unsigned NOT NULL default '0'",
-			'relation'                => array('type'=>'belongsTo', 'load'=>'eager')
-		),
-		'sorting' => array
-		(
+			'relation'                => ['type'=>'belongsTo', 'load'=>'eager']
+		],
+		'sorting' => [
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
-		),
-		'tstamp' => array
-		(
+		],
+		'tstamp' => [
 			'sql'                     => "int(10) unsigned NOT NULL default '0'"
-		),
-		'title' => array
-		(
+		],
+		'title' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['title'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'),
+			'eval'                    => ['mandatory'=>true, 'maxlength'=>128, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(128) NOT NULL default ''"
-		),
-		'url' => array
-		(
+		],
+		'url' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['url'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('mandatory'=>true, 'rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'fieldType'=>'radio', 'tl_class'=>'w50'),
+			'eval'                    => ['mandatory'=>true, 'rgxp'=>'url', 'decodeEntities'=>true, 'maxlength'=>255, 'fieldType'=>'radio', 'tl_class'=>'w50'],
 
 			'sql'                     => "varchar(255) NOT NULL default 'http://'"
-		),
-		'target' => array
-		(
+		],
+		'target' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['target'],
 			'exclude'                 => true,
 			'inputType'               => 'select',
-			'options'				  => array('_blank','_top','_none'),
-			'eval'                    => array('tl_class'=>'w50'),
+			'options'				  => ['_blank','_top','_none'],
+			'eval'                    => ['tl_class'=>'w50'],
 			'sql'                     => "char(10) NOT NULL default ''"
-		),
-		'linkTitle' => array
-		(
+		],
+		'linkTitle' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['linkTitle'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'eval'                    => ['maxlength'=>255, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'rel' => array
-		(
+		],
+		'rel' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['rel'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'eval'                    => ['maxlength'=>255, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'class' => array
-		(
+		],
+		'class' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['class'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50'),
+			'eval'                    => ['maxlength'=>255, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'addImage' => array
-		(
+		],
+		'addImage' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['addImage'],
 			'exclude'                 => true,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('submitOnChange'=>true),
+			'eval'                    => ['submitOnChange'=>true],
 			'sql'                     => "char(1) NOT NULL default ''"
-		),
-		'singleSRC' => array
-		(
+		],
+		'singleSRC' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['singleSRC'],
 			'exclude'                 => true,
 			'inputType'               => 'fileTree',
-			'eval'                    => array('mandatory'=>true,'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']),
+			'eval'                    => ['mandatory'=>true,'fieldType'=>'radio', 'files'=>true, 'filesOnly'=>true, 'extensions'=>$GLOBALS['TL_CONFIG']['validImageTypes']],
 			'sql'                     => "binary(16) NULL"
-		),
-		'alt' => array
-		(
+		],
+		'alt' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['alt'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'tl_class'=>'w50 clr'),
+			'eval'                    => ['maxlength'=>255, 'tl_class'=>'w50 clr'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'caption' => array
-		(
+		],
+		'caption' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_content']['caption'],
 			'exclude'                 => true,
 			'search'                  => true,
 			'inputType'               => 'text',
-			'eval'                    => array('maxlength'=>255, 'allowHtml'=>true, 'tl_class'=>'w50'),
+			'eval'                    => ['maxlength'=>255, 'allowHtml'=>true, 'tl_class'=>'w50'],
 			'sql'                     => "varchar(255) NOT NULL default ''"
-		),
-		'published' => array
-		(
+		],
+		'published' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['published'],
 			'exclude'                 => true,
 			'filter'                  => true,
 			'flag'                    => 1,
 			'inputType'               => 'checkbox',
-			'eval'                    => array('doNotCopy'=>true,'submitOnChange'=>true),
+			'eval'                    => ['doNotCopy'=>true,'submitOnChange'=>true],
 			'sql'                     => "char(1) NOT NULL default ''"
-		),
-		'start' => array
-		(
+		],
+		'start' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['start'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'eval'                    => ['rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'],
 			'sql'                     => "varchar(10) NOT NULL default ''"
-		),
-		'stop' => array
-		(
+		],
+		'stop' => [
 			'label'                   => &$GLOBALS['TL_LANG']['tl_links']['stop'],
 			'exclude'                 => true,
 			'inputType'               => 'text',
-			'eval'                    => array('rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'),
+			'eval'                    => ['rgxp'=>'datim', 'datepicker'=>true, 'tl_class'=>'w50 wizard'],
 			'sql'                     => "varchar(10) NOT NULL default ''"
-		)
-	)
-);
+		]
+	]
+];
 
 
 /**
