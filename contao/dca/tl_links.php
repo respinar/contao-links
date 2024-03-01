@@ -54,34 +54,34 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'edit' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['edit'],
 				'href' => 'act=edit',
-				'icon' => 'edit.gif'
+				'icon' => 'edit.svg'
 			],
 			'copy' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['copy'],
 				'href' => 'act=paste&amp;mode=copy',
-				'icon' => 'copy.gif'
+				'icon' => 'copy.svg'
 			],
 			'cut' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['cut'],
 				'href' => 'act=paste&amp;mode=cut',
-				'icon' => 'cut.gif'
+				'icon' => 'cut.svg'
 			],
 			'delete' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['delete'],
 				'href' => 'act=delete',
-				'icon' => 'delete.gif',
+				'icon' => 'delete.svg',
 				'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
 			],
 			'toggle' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['toggle'],
-				'icon' => 'visible.gif',
+				'icon' => 'visible.svg',
 				'attributes' => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
 				'button_callback' => ['tl_links', 'toggleIcon']
 			],
 			'show' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['show'],
 				'href' => 'act=show',
-				'icon' => 'show.gif'
+				'icon' => 'show.svg'
 			]
 		]
 	],
@@ -253,7 +253,7 @@ class tl_links extends Backend
 
 		if (!$row['published'])
 		{
-			$icon = 'invisible.gif';
+			$icon = 'invisible.svg';
 		}
 
 		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.$this->generateImage($icon, $label).'</a> ';
