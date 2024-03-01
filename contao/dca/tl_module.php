@@ -17,37 +17,34 @@ $GLOBALS['TL_DCA']['tl_module']['palettes']['links']   = '{title_legend},name,he
 /**
  * Add fields to tl_module
  */
-$GLOBALS['TL_DCA']['tl_module']['fields']['links_categories'] = array
-(
+$GLOBALS['TL_DCA']['tl_module']['fields']['links_categories'] = [
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['links_categories'],
 	'exclude'              => true,
 	'inputType'            => 'checkbox',
 	'foreignKey'           => 'tl_links_category.title',
-	'eval'                 => array('multiple'=>true, 'mandatory'=>true),
+	'eval'                 => ['multiple'=>true, 'mandatory'=>true],
 	'sql'				   => "blob NULL",
-);
+];
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['links_sortBy'] = array
-(
+$GLOBALS['TL_DCA']['tl_module']['fields']['links_sortBy'] = [
 	'label'                   => &$GLOBALS['TL_LANG']['tl_module']['links_sortBy'],
 	'default'                 => 'custom',
 	'exclude'                 => true,
 	'inputType'               => 'select',
-	'options'                 => array('custom','date_desc', 'date_asc','title_asc', 'title_desc'),
+	'options'                 => ['custom','date_desc', 'date_asc','title_asc', 'title_desc'],
 	'reference'               => &$GLOBALS['TL_LANG']['tl_module'],
-	'eval'                    => array('tl_class'=>'w50'),
+	'eval'                    => ['tl_class'=>'w50'],
 	'sql'                     => "varchar(16) NOT NULL default ''"
-);
+];
 
-$GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = array
-(
+$GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = [
 	'label'                => &$GLOBALS['TL_LANG']['tl_module']['links_template'],
 	'exclude'              => true,
 	'inputType'            => 'select',
-	'options_callback'     => array('tl_module_links', 'getLinksTemplates'),
-	'eval'				   => array('tl_class'=>'w50 clr'),
+	'options_callback'     => ['tl_module_links', 'getLinksTemplates'],
+	'eval'				   => ['tl_class'=>'w50 clr'],
 	'sql'				   => "varchar(64) NOT NULL default ''",
-);
+];
 
 
 /**
