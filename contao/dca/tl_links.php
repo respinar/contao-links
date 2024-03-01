@@ -75,8 +75,7 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'toggle' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['toggle'],
 				'icon' => 'visible.svg',
-				'attributes' => 'onclick="Backend.getScrollOffset();return AjaxRequest.toggleVisibility(this,%s)"',
-				'button_callback' => ['tl_links', 'toggleIcon']
+				'href' => 'act=toggle&amp;field=published',
 			],
 			'show' => [
 				'label' => &$GLOBALS['TL_LANG']['tl_links']['show'],
@@ -196,6 +195,7 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'label' => &$GLOBALS['TL_LANG']['tl_links']['published'],
 			'exclude' => true,
 			'filter' => true,
+			'toggle' => true,
 			'flag' => 1,
 			'inputType' => 'checkbox',
 			'eval' => ['doNotCopy' => true,'submitOnChange' => true],
@@ -233,65 +233,5 @@ class tl_links extends Backend
 	public function generateLinkRow($arrRow)
 	{
 		return '<div>'.$arrRow['title'] . ' <span style="padding-left:3px;color:#b3b3b3;">[' . $arrRow['url'] . ']</span></div>';
-	}
-
-	public function toggleIcon($row, $href, $label, $title, $icon, $attributes)
-	{
-		if (strlen($this->Input->get('tid')))
-		{
-			$this->toggleVisibility($this->Input->get('tid'), ($this->Input->get('state') == 1));
-			$this->redirect($this->getReferer());
-		}
-
-		// Check permissions AFTER checking the tid, so hacking attempts are logged
-		//if (!$this->User->isAdmin && !$this->User->hasAccess('tl_prices::published', 'alexf'))
-		//{
-		//	return '';
-		//}
-
-		$href .= '&amp;tid='.$row['id'].'&amp;state='.($row['published'] ? '' : 1);
-
-		if (!$row['published'])
-		{
-			$icon = 'invisible.svg';
-		}
-
-		return '<a href="'.$this->addToUrl($href).'" title="'.specialchars($title).'"'.$attributes.'>'.$this->generateImage($icon, $label).'</a> ';
-	}
-
-
-
-	public function toggleVisibility($intId, $blnVisible)
-	{
-		// Check permissions to edit
-		$this->Input->setGet('id', $intId);
-		$this->Input->setGet('act', 'toggle');
-		//$this->checkPermission();
-
-		// Check permissions to publish
-		//if (!$this->User->isAdmin && !$this->User->hasAccess('tl_news::published', 'alexf'))
-		//{
-		//	$this->log('Not enough permissions to publish/unpublish news item ID "'.$intId.'"', 'tl_news toggleVisibility', TL_ERROR);
-		//	$this->redirect('contao/main.php?act=error');
-		//}
-
-		$this->createInitialVersion('tl_links_category', $intId);
-
-		// Trigger the save_callback
-		if (is_array($GLOBALS['TL_DCA']['tl_links']['fields']['published']['save_callback']))
-		{
-			foreach ($GLOBALS['TL_DCA']['tl_links']['fields']['published']['save_callback'] as $callback)
-			{
-				$this->import($callback[0]);
-				$blnVisible = $this->$callback[0]->$callback[1]($blnVisible, $this);
-			}
-		}
-
-		// Update the database
-		$this->Database->prepare("UPDATE tl_links SET tstamp=". time() .", published='" . ($blnVisible ? 1 : '') . "' WHERE id=?")
-					 ->execute($intId);
-
-		$this->createNewVersion('tl_links', $intId);
-
 	}
 }
