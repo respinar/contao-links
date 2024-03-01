@@ -8,6 +8,8 @@
  * @license LGPL-3.0-or-later
  */
 
+use Contao\Controller;
+
 /**
  * Add palettes to tl_module
  */
@@ -41,24 +43,9 @@ $GLOBALS['TL_DCA']['tl_module']['fields']['links_template'] = [
 	'label' => &$GLOBALS['TL_LANG']['tl_module']['links_template'],
 	'exclude' => true,
 	'inputType' => 'select',
-	'options_callback' => ['tl_module_links', 'getLinksTemplates'],
+	'options_callback' => static function () {
+		return Controller::getTemplateGroup('links_');
+	},	
 	'eval' => ['tl_class' => 'w50 clr'],
 	'sql' => "varchar(64) NOT NULL default ''",
 ];
-
-
-/**
- * Class tl_links
- */
-class tl_module_links extends Backend
-{
-	/**
-	 * Return all links templates as array
-	 *
-	 * @return array
-	 */
-	public function getLinksTemplates()
-	{
-		return $this->getTemplateGroup('links_');
-	}
-}
