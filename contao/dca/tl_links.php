@@ -123,7 +123,7 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'search' => true,
 			'inputType' => 'text',
 			'eval' => ['mandatory' => true, 'rgxp' => 'url', 'decodeEntities' => true, 'maxlength' => 255, 'fieldType' => 'radio', 'tl_class' => 'w50'],
-			'sql' => "varchar(255) NOT NULL default 'http://'"
+			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'target' => [
 			'exclude' => true,
