@@ -10,6 +10,7 @@
 
 use Contao\DC_Table;
 use Contao\Backend;
+use Contao\DataContainer;
 use Contao\System;
 
  /**
@@ -38,11 +39,14 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 	// List
 	'list' => [
 		'sorting' => [
-			'mode' => 4,
+			'mode' => DataContainer::MODE_PARENT,
 			'fields' => ['sorting'],
 			'headerFields' => ['title'],
-			'panelLayout' => 'search,limit',
-			'child_record_callback' => ['tl_links', 'generateLinkRow']
+			'panelLayout' => 'search,limit'
+		],
+		'label' => [
+			'fields' => array('title', 'url'),
+			'format' => '%s <span style="padding-left:3px;color:#b3b3b3;">[%s]</span>',
 		],
 		'global_operations' => [
 			'all' => [
@@ -199,21 +203,3 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 		]
 	]
 ];
-
-
-/**
- * Provide miscellaneous methods that are used by the data configuration array
- */
-class tl_links extends Backend
-{
-
-	/**
-	 * Generate a song row and return it as HTML string
-	 * @param array
-	 * @return string
-	 */
-	public function generateLinkRow($arrRow)
-	{
-		return '<div>'.$arrRow['title'] . ' <span style="padding-left:3px;color:#b3b3b3;">[' . $arrRow['url'] . ']</span></div>';
-	}
-}
