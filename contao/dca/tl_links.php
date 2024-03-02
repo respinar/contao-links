@@ -163,7 +163,7 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'label' => &$GLOBALS['TL_LANG']['tl_content']['singleSRC'],
 			'exclude' => true,
 			'inputType' => 'fileTree',
-			'eval' => ['mandatory' => true,'fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => $GLOBALS['TL_CONFIG']['validImageTypes']],
+			'eval' => ['mandatory' => true,'fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => '%contao.image.valid_extensions%'],
 			'sql' => "binary(16) NULL"
 		],
 		'alt' => [
