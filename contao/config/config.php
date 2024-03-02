@@ -18,10 +18,5 @@ $GLOBALS['BE_MOD']['content']['links'] = array(
 /**
  * Register models
  */
- $GLOBALS['TL_MODELS']['tl_links']          = 'Respinar\Links\Model\LinksModel';
- $GLOBALS['TL_MODELS']['tl_links_category'] = 'Respinar\Links\Model\LinksCategoryModel';
-
-/**
- * Front end modules
- */
-$GLOBALS['FE_MOD']['miscellaneous']['links']   = 'Respinar\Links\Frontend\Module\ModuleLinksList';
+ $GLOBALS['TL_MODELS']['tl_links']          = LinksModel::class;
+ $GLOBALS['TL_MODELS']['tl_links_category'] = LinksCategoryModel::class;
