@@ -9,6 +9,13 @@
  */
 
 use Contao\DC_Table;
+use Contao\System;
+
+ /**
+ * Load tl_content language file
+ */
+System::loadLanguageFile('tl_content');
+
 
 /**
  * Table tl_links_category
@@ -62,7 +69,7 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
 			'delete' => [
 				'href' => 'act=delete',
 				'icon' => 'delete.svg',
-				'attributes' => 'onclick="if(!confirm(\'' . $GLOBALS['TL_LANG']['MSC']['deleteConfirm'] . '\'))return false;Backend.getScrollOffset()"'
+				'attributes' => 'onclick="if(!confirm(\'' . ($GLOBALS['TL_LANG']['MSC']['deleteConfirm'] ?? null) . '\'))return false;Backend.getScrollOffset()"'
 			],
 			'show' => [
 				'href' => 'act=show',
