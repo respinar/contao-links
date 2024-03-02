@@ -13,11 +13,12 @@
  */
 namespace Respinar\Links\Model;
 
+use Contao\Model;
 
 /**
  * Reads and writes Links categories
 */
-class LinksCategoryModel extends \Model
+class LinksCategoryModel extends Model
 {
 
 	/**
