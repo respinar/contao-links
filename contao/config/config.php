@@ -8,6 +8,9 @@
  * @license LGPL-3.0-or-later
  */ 
 
+use Respinar\Links\Model\LinksCategoryModel;
+use Respinar\Links\Model\LinksModel;
+
 /**
  * Back end modules
  */
