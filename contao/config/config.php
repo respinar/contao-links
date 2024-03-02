@@ -11,14 +11,9 @@
 /**
  * Back end modules
  */
-array_insert($GLOBALS['BE_MOD']['content'], 1, array
-(
-	'links' => array
-	(
-		'tables' => array('tl_links_category', 'tl_links'),
-		'icon'   => 'system/modules/links/assets/icon.png'
-	)
-));
+$GLOBALS['BE_MOD']['content']['links'] = array(
+		'tables' => array('tl_links_category', 'tl_links')
+);
 
 /**
  * Register models
