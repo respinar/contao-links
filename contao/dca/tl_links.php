@@ -86,14 +86,13 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 
 	// Palettes
 	'palettes' => [
-		'__selector__' => ['addImage','published'],
-		'default' => '{title_legend},title,url;{href_legend},linkTitle,target,class,rel;{image_legend},addImage;{publish_legend},published'
+		'__selector__' => ['addImage'],
+		'default' => '{title_legend},title,url;{href_legend},linkTitle,target,class,rel;{image_legend},addImage;{publish_legend},published,start,stop'
 	],
 
 	// Subpalettes
 	'subpalettes' => [
-		'addImage' => 'singleSRC,alt,caption',
-		'published' => 'start,stop'
+		'addImage' => 'singleSRC,alt,caption'
 	],
 
 	// Fields
@@ -186,7 +185,7 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'toggle' => true,
 			'flag' => 1,
 			'inputType' => 'checkbox',
-			'eval' => ['doNotCopy' => true,'submitOnChange' => true],
+			'eval' => ['doNotCopy' => true],
 			'sql' => "char(1) NOT NULL default ''"
 		],
 		'start' => [
