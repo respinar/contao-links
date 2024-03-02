@@ -14,11 +14,12 @@
  */
 namespace Respinar\Links\Model;
 
+use Contao\Model;
 
 /**
  * Reads and writes Members Act
 */
-class LinksModel extends \Model
+class LinksModel extends Model
 {
 
 	/**
