@@ -160,12 +160,14 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "char(1) NOT NULL default ''"
 		],
 		'singleSRC' => [
+			'label' => &$GLOBALS['TL_LANG']['tl_content']['singleSRC'],
 			'exclude' => true,
 			'inputType' => 'fileTree',
 			'eval' => ['mandatory' => true,'fieldType' => 'radio', 'files' => true, 'filesOnly' => true, 'extensions' => $GLOBALS['TL_CONFIG']['validImageTypes']],
 			'sql' => "binary(16) NULL"
 		],
 		'alt' => [
+			'label' => &$GLOBALS['TL_LANG']['tl_content']['alt'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
@@ -173,6 +175,7 @@ $GLOBALS['TL_DCA']['tl_links'] = [
 			'sql' => "varchar(255) NOT NULL default ''"
 		],
 		'caption' => [
+			'label' => &$GLOBALS['TL_LANG']['tl_content']['caption'],
 			'exclude' => true,
 			'search' => true,
 			'inputType' => 'text',
