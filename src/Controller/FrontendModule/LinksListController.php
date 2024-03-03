@@ -20,7 +20,6 @@ use Contao\ModuleModel;
 use Contao\StringUtil;
 use Respinar\LinksBundle\Helper\Links;
 use Respinar\Links\Model\LinksModel;
-use Respinar\Links\Frontend\Module\ModuleLinks;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
