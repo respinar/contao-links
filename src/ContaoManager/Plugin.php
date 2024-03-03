@@ -20,14 +20,14 @@ use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouteCollection;
-use Respinar\LinksBundle\RespinarContaoLinksBundle;
+use Respinar\LinksBundle\RespinarLinksBundle;
 
 class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
     public function getBundles(ParserInterface $parser): array
     {
         return [
-            BundleConfig::create(RespinarContaoLinksBundle::class)
+            BundleConfig::create(RespinarLinksBundle::class)
                 ->setLoadAfter([ContaoCoreBundle::class]),
         ];
     }
