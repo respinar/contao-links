@@ -22,7 +22,7 @@
     },
     "autoload": {
         "psr-4": {
-            "Respinar\\ContaoLinks\\": "src/"
+            "Respinar\\LinksBundle\\": "src/"
         },
         "classmap": [
             "contao/"
@@ -35,6 +35,6 @@
         ]
     },
     "extra": {
-        "contao-manager-plugin": "Respinar\\ContaoLinks\\ContaoManager\\Plugin"
+        "contao-manager-plugin": "Respinar\\LinksBundle\\ContaoManager\\Plugin"
     }
 }
