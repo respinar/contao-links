@@ -10,7 +10,7 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
-namespace Respinar\ContaoLinks\ContaoManager;
+namespace Respinar\LinksBundle\ContaoManager;
 
 use Contao\CoreBundle\ContaoCoreBundle;
 use Contao\ManagerPlugin\Bundle\BundlePluginInterface;
@@ -20,7 +20,7 @@ use Contao\ManagerPlugin\Routing\RoutingPluginInterface;
 use Symfony\Component\Config\Loader\LoaderResolverInterface;
 use Symfony\Component\HttpKernel\KernelInterface;
 use Symfony\Component\Routing\RouteCollection;
-use Respinar\ContaoLinks\RespinarContaoLinksBundle;
+use Respinar\LinksBundle\RespinarContaoLinksBundle;
 
 class Plugin implements BundlePluginInterface, RoutingPluginInterface
 {
