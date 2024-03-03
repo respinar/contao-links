@@ -9,7 +9,7 @@
  */
 
 use Contao\Controller;
-use Respinar\ContaoLinks\Controller\FrontendModule\LinksListController;
+use Respinar\LinksBundle\Controller\FrontendModule\LinksListController;
 
 /**
  * Add palettes to tl_module
