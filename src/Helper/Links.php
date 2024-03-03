@@ -11,7 +11,7 @@
 /**
  * Namespace
  */
-namespace Respinar\ContaoLinks\Helper;
+namespace Respinar\LinksBundle\Helper;
 
 use Contao\CoreBundle\Security\ContaoCorePermissions;
 use Contao\FilesModel;
