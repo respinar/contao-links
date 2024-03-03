@@ -11,14 +11,14 @@
 /**
  * Namespace
  */
-namespace Respinar\ContaoLinks\Controller\FrontendModule;
+namespace Respinar\LinksBundle\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
 use Contao\Template;
 use Contao\ModuleModel;
 use Contao\StringUtil;
-use Respinar\ContaoLinks\Helper\Links;
+use Respinar\LinksBundle\Helper\Links;
 use Respinar\Links\Model\LinksModel;
 use Respinar\Links\Frontend\Module\ModuleLinks;
 use Symfony\Component\HttpFoundation\Request;
