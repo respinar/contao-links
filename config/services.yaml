@@ -6,7 +6,7 @@ services:
         bind:
             #$projectDir: '%kernel.project_dir%'
 
-    Respinar\ContaoLinks\:
+    Respinar\LinksBundle\:
         resource: ../src/
         exclude: ../src/{DependencyInjection,Session}
 
