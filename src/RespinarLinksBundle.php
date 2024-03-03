@@ -15,7 +15,7 @@ namespace Respinar\LinksBundle;
 use Symfony\Component\DependencyInjection\ContainerBuilder;
 use Symfony\Component\HttpKernel\Bundle\Bundle;
 
-class RespinarContaoLinksBundle extends Bundle
+class RespinarLinksBundle extends Bundle
 {
     public function getPath(): string
     {
