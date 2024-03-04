@@ -34,7 +34,7 @@ class LinksListController extends AbstractFrontendModuleController
 
 	public const TYPE = 'links_list';
 
-	protected function getResponse(Template $template, ModuleModel $model, Request $request): ?Response
+	protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
 	{
 
 		$template->empty = $GLOBALS['TL_LANG']['MSC']['emptyLinks'];
