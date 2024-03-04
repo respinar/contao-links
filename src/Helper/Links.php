@@ -64,13 +64,10 @@ class Links
 				->setSize($imgSize)
 				->from($objLink->singleSRC)
                 ->buildIfResourceExists();
-		}
-		
-		if (null !== $figure)
-		{
+
 			$figure->applyLegacyTemplateData($objTemplate);
 		}
-
+		
 		$objTemplate->hrefclass = $objLink->class;
 		$objTemplate->linkTitle = $objLink->linkTitle ? $objLink->linkTitle : $objLink->title;
 
@@ -118,7 +115,7 @@ class Links
 
 			while ($objCategory->next())
 			{
-				if ($objCategory->protected && !$security->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, StringUtil::deserialize($objCategory->groups, true)))
+				if ($objCategory->protected && !$security->isGranted(ContaoCorePermissions::MEMBER_IN_GROUPS, $objCategory->groups))
 				{
 					continue;
 				}
