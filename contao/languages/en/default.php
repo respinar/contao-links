@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Contao Links Bundle.
  *
@@ -8,9 +10,7 @@
  * @license LGPL-3.0-or-later
  */
 
-
-/**
+/*
  * Miscellaneous
  */
 $GLOBALS['TL_LANG']['MSC']['emptyLinks'] = 'There is no links';
-
