@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Contao Links Bundle.
  *
@@ -9,4 +11,3 @@
  */
 
 $GLOBALS['TL_LANG']['MSC']['emptyLinks'] = 'پیوندی وجود ندارد';
-
