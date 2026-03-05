@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Contao Links Bundle.
  *
@@ -8,15 +10,12 @@
  * @license LGPL-3.0-or-later
  */
 
-
-/**
+/*
  * Back end modules
  */
-$GLOBALS['TL_LANG']['MOD']['links']                 = array('Links','Add and manage Links.');
+$GLOBALS['TL_LANG']['MOD']['links'] = ['Links', 'Add and manage Links.'];
 
-
-/**
+/*
  * Front end modules
  */
-$GLOBALS['TL_LANG']['FMD']['links']                 = array('Links','Adds a list of Links to the website.');
-
+$GLOBALS['TL_LANG']['FMD']['links'] = ['Links', 'Adds a list of Links to the website.'];
