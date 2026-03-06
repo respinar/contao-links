@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Contao Links Bundle.
  *
@@ -9,22 +11,22 @@
  */
 
 /**
- * Run in a custom namespace, so the class can be replaced
+ * Run in a custom namespace, so the class can be replaced.
  */
+
 namespace Respinar\Links\Model;
 
 use Contao\Model;
 
 /**
- * Reads and writes Links categories
-*/
+ * Reads and writes Links categories.
+ */
 class LinksCategoryModel extends Model
 {
-
-	/**
-	 * Table name
-	 * @var string
-	 */
-	protected static $strTable = 'tl_links_category';
-
+    /**
+     * Table name.
+     *
+     * @var string
+     */
+    protected static $strTable = 'tl_links_category';
 }
