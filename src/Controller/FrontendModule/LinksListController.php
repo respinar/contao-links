@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 /*
  * This file is part of Contao Links Bundle.
  *
@@ -9,78 +11,69 @@
  */
 
 /**
- * Namespace
+ * Namespace.
  */
+
 namespace Respinar\LinksBundle\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
-use Contao\Template;
 use Contao\ModuleModel;
 use Contao\StringUtil;
-use Respinar\LinksBundle\Helper\Links;
+use Contao\Template;
 use Respinar\Links\Model\LinksModel;
+use Respinar\LinksBundle\Helper\Links;
 use Symfony\Component\HttpFoundation\Request;
 use Symfony\Component\HttpFoundation\Response;
 
 /**
- * Class ModuleLinksList
+ * Class ModuleLinksList.
  *
  * Front end module "links list".
  */
 #[AsFrontendModule(category: 'links', template: 'mod_links')]
 class LinksListController extends AbstractFrontendModuleController
 {
+    public const TYPE = 'links_list';
 
-	public const TYPE = 'links_list';
+    protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
+    {
+        $template->empty = $GLOBALS['TL_LANG']['MSC']['emptyLinks'];
 
-	protected function getResponse(Template $template, ModuleModel $model, Request $request): Response
-	{
+        $model->links_categories = StringUtil::deserialize($model->links_categories);
+        $model->links_categories = Links::sortOutProtected($model->links_categories);
 
-		$template->empty = $GLOBALS['TL_LANG']['MSC']['emptyLinks'];
+        // $intTotal = LinksModel::countPublishedByPids($model->links_categories); if
+        // ($intTotal < 1) { 	return; }
 
-		$model->links_categories = StringUtil::deserialize($model->links_categories);
-		$model->links_categories = Links::sortOutProtected($model->links_categories);
+        $arrOptions = [];
+        if ($model->links_sortBy) {
+            switch ($model->links_sortBy) {
+                case 'title_asc':
+                    $arrOptions['order'] = 'title ASC';
+                    break;
+                case 'title_desc':
+                    $arrOptions['order'] = 'title DESC';
+                    break;
+                case 'date_asc':
+                    $arrOptions['order'] = 'tstamp ASC';
+                    break;
+                case 'date_desc':
+                    $arrOptions['order'] = 'tstamp DESC';
+                    break;
+                case 'custom':
+                    $arrOptions['order'] = 'sorting ASC';
+                    break;
+            }
+        }
 
-		// $intTotal = LinksModel::countPublishedByPids($model->links_categories);
+        $objLinks = LinksModel::findPublishedByPids($model->links_categories, null, 0, 0, $arrOptions);
 
+        // No items found
+        if (null !== $objLinks) {
+            $template->links = Links::parseLinks($objLinks, $model);
+        }
 
-		// if ($intTotal < 1)
-		// {
-		// 	return;
-		// }
-
-		$arrOptions = array();
-		if ($model->links_sortBy)
-		{
-			switch ($model->links_sortBy)
-			{
-				case 'title_asc':
-					$arrOptions['order'] = "title ASC";
-					break;
-				case 'title_desc':
-					$arrOptions['order'] = "title DESC";
-					break;
-				case 'date_asc':
-					$arrOptions['order'] = "tstamp ASC";
-					break;
-				case 'date_desc':
-					$arrOptions['order'] = "tstamp DESC";
-					break;
-				case 'custom':
-					$arrOptions['order'] = "sorting ASC";
-					break;
-			}
-		}
-
-		$objLinks = LinksModel::findPublishedByPids($model->links_categories,null,0,0,$arrOptions);
-
-		// No items found
-		if ($objLinks !== null)
-		{
-			$template->links = Links::parseLinks($objLinks, $model);
-		}
-
-		return $template->getResponse();
-	}
+        return $template->getResponse();
+    }
 }
