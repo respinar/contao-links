@@ -102,7 +102,7 @@ class Links
      */
     public static function sortOutProtected(array $arrCategories): array
     {
-        if ($arrCategories === [] || !\is_array($arrCategories)) {
+        if ([] === $arrCategories || !\is_array($arrCategories)) {
             return $arrCategories;
         }
 
