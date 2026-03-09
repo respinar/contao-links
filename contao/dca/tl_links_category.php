@@ -10,6 +10,7 @@ declare(strict_types=1);
  * @license LGPL-3.0-or-later
  */
 
+use Contao\DataContainer;
 use Contao\DC_Table;
 use Contao\System;
 
@@ -37,7 +38,7 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
     // List
     'list' => [
         'sorting' => [
-            'mode' => 1,
+            'mode' => DataContainer::MODE_SORTED,
             'fields' => ['title'],
             'flag' => 1,
             'panelLayout' => 'filter;search,limit',
@@ -45,13 +46,6 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
         'label' => [
             'fields' => ['title'],
             'format' => '%s',
-        ],
-        'global_operations' => [
-            'all' => [
-                'href' => 'act=select',
-                'class' => 'header_edit_all',
-                'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"',
-            ],
         ],
     ],
 
