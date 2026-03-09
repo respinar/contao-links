@@ -48,13 +48,6 @@ $GLOBALS['TL_DCA']['tl_links'] = [
             'fields' => ['title', 'url'],
             'format' => '%s <span style="padding-left:3px;color:#b3b3b3;">[%s]</span>',
         ],
-        'global_operations' => [
-            'all' => [
-                'href' => 'act=select',
-                'class' => 'header_edit_all',
-                'attributes' => 'onclick="Backend.getScrollOffset()" accesskey="e"',
-            ],
-        ],
     ],
 
     // Palettes
