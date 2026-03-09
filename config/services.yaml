@@ -3,10 +3,6 @@ services:
     _defaults:
         autowire: true          # Automatically injects dependencies in your services.
         autoconfigure: true     # Automatically registers your services as commands, event subscribers, etc.
-        bind:
-            #$projectDir: '%kernel.project_dir%'
 
     Respinar\LinksBundle\:
         resource: ../src/
-        exclude: ../src/{DependencyInjection,Session}
-
