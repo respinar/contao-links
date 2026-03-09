@@ -35,7 +35,7 @@ class Links
      *
      * @var artray
      */
-    private static $arrUrlCache = [];
+    private static array $arrUrlCache = [];
 
     /**
      * Parse Link.
@@ -102,7 +102,7 @@ class Links
      */
     public static function sortOutProtected(array $arrCategories): array
     {
-        if (empty($arrCategories) || !\is_array($arrCategories)) {
+        if ($arrCategories === [] || !\is_array($arrCategories)) {
             return $arrCategories;
         }
 
