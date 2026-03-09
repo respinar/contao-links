@@ -18,6 +18,7 @@ namespace Respinar\LinksBundle\Controller\FrontendModule;
 
 use Contao\CoreBundle\Controller\FrontendModule\AbstractFrontendModuleController;
 use Contao\CoreBundle\DependencyInjection\Attribute\AsFrontendModule;
+use Contao\Model\Collection;
 use Contao\ModuleModel;
 use Contao\StringUtil;
 use Contao\Template;
@@ -70,7 +71,7 @@ class LinksListController extends AbstractFrontendModuleController
         $objLinks = LinksModel::findPublishedByPids($model->links_categories, null, 0, 0, $arrOptions);
 
         // No items found
-        if (null !== $objLinks) {
+        if ($objLinks instanceof Collection) {
             $template->links = Links::parseLinks($objLinks, $model);
         }
 
