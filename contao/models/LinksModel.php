@@ -36,7 +36,7 @@ class LinksModel extends Model
      */
     public static function findPublishedByPids(array $arrPids, bool|null $blnFeatured = null, int $intLimit = 0, int $intOffset = 0, array $arrOptions = []): Collection|null
     {
-        if ($arrPids === []) {
+        if ([] === $arrPids) {
             return null;
         }
 
@@ -74,7 +74,7 @@ class LinksModel extends Model
      */
     public static function countPublishedByPids(array $arrPids, bool|null $blnFeatured = null, array $arrOptions = []): int
     {
-        if ($arrPids === []) {
+        if ([] === $arrPids) {
             return 0;
         }
 
