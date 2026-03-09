@@ -17,8 +17,8 @@
         "issues": "https://github.com/respinar/contao-links/issues"
     },
     "require": {
-        "php": "^8.0",
-        "contao/core-bundle":"^4.13 || ^5.2"
+        "php": "^8.3",
+        "contao/core-bundle":"^5.3"
     },
     "autoload": {
         "psr-4": {
