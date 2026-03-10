@@ -75,20 +75,17 @@ $GLOBALS['TL_DCA']['tl_links_category'] = [
             'sql' => "int(10) unsigned NOT NULL default '0'",
         ],
         'title' => [
-            'exclude' => true,
             'search' => true,
             'inputType' => 'text',
             'eval' => ['mandatory' => true, 'maxlength' => 128, 'tl_class' => 'w50'],
             'sql' => "varchar(128) NOT NULL default ''",
         ],
         'protected' => [
-            'exclude' => true,
             'inputType' => 'checkbox',
             'eval' => ['submitOnChange' => true],
             'sql' => "char(1) NOT NULL default ''",
         ],
         'groups' => [
-            'exclude' => true,
             'inputType' => 'checkbox',
             'foreignKey' => 'tl_member_group.name',
             'eval' => ['mandatory' => true, 'multiple' => true],
